@@ -1,4 +1,4 @@
-# 🌐 Aarthi S — AI & Data Science Engineer Portfolio
+# 🌐 Aarthi S — AI & ML Engineer Portfolio
 
 [![Portfolio Live](https://img.shields.io/badge/Portfolio-Live_Site-06d6a0.svg)](https://aarthis20040708-collab.github.io/)
 [![GitHub](https://img.shields.io/badge/GitHub-aarthis20040708--collab-181717.svg?logo=github)](https://github.com/aarthis20040708-collab)
