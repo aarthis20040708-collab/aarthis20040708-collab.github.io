@@ -478,7 +478,10 @@
               <li>Exposed asynchronous REST endpoints via <strong>FastAPI</strong> with strict Pydantic v2 validation contracts.</li>
             </ul>
           </div>
-          <button class="sim-btn" onclick="openSimModal('crewai')">⚡ Launch CrewAI Simulation</button>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;">
+            <button class="sim-btn" onclick="openSimModal('crewai')">⚡ Launch CrewAI Simulation</button>
+            <a href="https://github.com/aarthis20040708-collab/enterprise-agent-crew" target="_blank" rel="noopener" class="sim-btn" style="border-color:rgba(56,189,248,0.4); text-decoration:none;">🐙 GitHub Repo &rarr;</a>
+          </div>
           <div class="project-tech">
             <span class="tech-chip">Python</span><span class="tech-chip">LangChain</span><span class="tech-chip">CrewAI</span><span class="tech-chip">FastAPI</span><span class="tech-chip">Pydantic v2</span><span class="tech-chip">Groq Llama-3</span>
           </div>
@@ -495,7 +498,11 @@
               <li>Deployed a <strong>FastAPI microservice</strong> executing cosine similarity search over PostgreSQL <code>pgvector</code> in &lt;50ms, synced daily via GitHub Actions.</li>
             </ul>
           </div>
-          <button class="sim-btn" onclick="openSimModal('talentradar')">📊 Launch TalentRadar Simulator</button>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;">
+            <button class="sim-btn" onclick="openSimModal('talentradar')">📊 Launch TalentRadar Simulator</button>
+            <a href="https://pexcera.com/careers/ai-data-pipelines-engineer-fresher#apply" target="_blank" rel="noopener" class="sim-btn" style="background:rgba(6,214,160,0.15); border-color:#06d6a0; color:#06d6a0; font-weight:600; text-decoration:none;">🚀 Apply for Target Role &rarr;</a>
+            <a href="https://github.com/aarthis20040708-collab/TalentRadar-AI" target="_blank" rel="noopener" class="sim-btn" style="border-color:rgba(56,189,248,0.4); text-decoration:none;">🐙 GitHub Repo &rarr;</a>
+          </div>
           <div class="project-tech">
             <span class="tech-chip">FastAPI</span><span class="tech-chip">AsyncIO</span><span class="tech-chip">pgvector</span><span class="tech-chip">PostgreSQL</span><span class="tech-chip">Groq API</span><span class="tech-chip">GitHub Actions</span>
           </div>
@@ -512,7 +519,9 @@
               <li>Wrapped with FastAPI endpoints for CI/CD continuous model verification.</li>
             </ul>
           </div>
-          <button class="sim-btn" onclick="openSimModal('hallucination')">🛡️ Test Hallucination Detector</button>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;">
+            <button class="sim-btn" onclick="openSimModal('hallucination')">🛡️ Test Hallucination Detector</button>
+          </div>
           <div class="project-tech">
             <span class="tech-chip">Python</span><span class="tech-chip">RAG</span><span class="tech-chip">Transformers</span><span class="tech-chip">FastAPI</span><span class="tech-chip">LLM Evaluation</span>
           </div>
@@ -528,6 +537,9 @@
               <li>Executed SQL transformation views to detect idle compute nodes and unattached disks, delivering up to 28% monthly cloud cost savings.</li>
               <li>Built interactive Streamlit dashboards for executive spend reporting.</li>
             </ul>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;">
+            <a href="https://github.com/aarthis20040708-collab/finops-cost-optimization-engine" target="_blank" rel="noopener" class="sim-btn" style="border-color:rgba(56,189,248,0.4); text-decoration:none;">🐙 GitHub Repo &rarr;</a>
           </div>
           <div class="project-tech">
             <span class="tech-chip">Python</span><span class="tech-chip">SQL Models</span><span class="tech-chip">FastAPI</span><span class="tech-chip">DuckDB / Pandas</span><span class="tech-chip">Streamlit</span>
@@ -545,7 +557,10 @@
               <li>Executed feature engineering, categorical encoding, and exploratory data analysis.</li>
             </ul>
           </div>
-          <button class="sim-btn" onclick="openSimModal('churn')">🧠 Run 95% ML Churn Predictor</button>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;">
+            <button class="sim-btn" onclick="openSimModal('churn')">🧠 Run 95% ML Churn Predictor</button>
+            <a href="https://github.com/aarthis20040708-collab/telecom-customer-churn-prediction" target="_blank" rel="noopener" class="sim-btn" style="border-color:rgba(56,189,248,0.4); text-decoration:none;">🐙 GitHub Repo &rarr;</a>
+          </div>
           <div class="project-tech">
             <span class="tech-chip">Python</span><span class="tech-chip">XGBoost</span><span class="tech-chip">Scikit-Learn</span><span class="tech-chip">Streamlit</span>
           </div>
@@ -947,9 +962,17 @@
               <div style="font-size:1.3rem;font-weight:bold;color:#f59e0b;" id="tr-jobs">6,140 Listings</div>
             </div>
           </div>
-          <div style="background:var(--bg-base);padding:16px;border-radius:8px;border:1px solid var(--border);">
+          <div style="background:var(--bg-base);padding:16px;border-radius:8px;border:1px solid var(--border);margin-bottom:16px;">
             <div style="font-size:0.8rem;font-family:var(--font-mono);color:var(--accent);margin-bottom:8px;">TOP IN-DEMAND SKILLS EXTRACTED:</div>
             <div id="tr-skills" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; padding-top:12px; border-top:1px solid var(--border);">
+            <a id="tr-apply-link" href="https://pexcera.com/careers/ai-data-pipelines-engineer-fresher#apply" target="_blank" rel="noopener" style="background:#06d6a0; color:#080c14; padding:9px 20px; border-radius:6px; font-family:var(--font-head); font-weight:700; text-decoration:none; font-size:0.88rem; display:inline-flex; align-items:center; gap:6px;">
+              🚀 Apply for Target Role &rarr;
+            </a>
+            <a href="https://github.com/aarthis20040708-collab/TalentRadar-AI" target="_blank" rel="noopener" class="sim-btn" style="margin:0; text-decoration:none;">
+              🐙 View TalentRadar Code &rarr;
+            </a>
           </div>
         `;
         setTimeout(updateTalentRadar, 50);
@@ -1046,17 +1069,37 @@
       const demand = document.getElementById('tr-demand');
       const jobs = document.getElementById('tr-jobs');
       const skills = document.getElementById('tr-skills');
+      const applyLink = document.getElementById('tr-apply-link');
       
       const data = {
-        genai: { sal: '$152,000 / yr', demand: '+64% Growth', jobs: '6,140 Listings', tags: ['Python', 'FastAPI', 'pgvector', 'AsyncIO', 'LangChain', 'Groq API', 'GitHub Actions'] },
-        ml: { sal: '$144,000 / yr', demand: '+38% Growth', jobs: '5,210 Listings', tags: ['Python', 'XGBoost', 'Scikit-Learn', 'Feature Engineering', 'EDA', 'Pandas'] },
-        bi: { sal: '$118,000 / yr', demand: '+26% Growth', jobs: '7,400 Listings', tags: ['SQL', 'Power BI (PL-300)', 'Tableau', 'Excel', 'ETL Pipelines', 'BigQuery'] }
+        genai: { 
+          sal: '$152,000 / yr', 
+          demand: '+64% Growth', 
+          jobs: '6,140 Listings', 
+          url: 'https://pexcera.com/careers/ai-data-pipelines-engineer-fresher#apply',
+          tags: ['Python', 'FastAPI', 'pgvector', 'AsyncIO', 'LangChain', 'Groq API', 'GitHub Actions'] 
+        },
+        ml: { 
+          sal: '$144,000 / yr', 
+          demand: '+38% Growth', 
+          jobs: '5,210 Listings', 
+          url: 'https://www.linkedin.com/jobs/search/?keywords=Machine+Learning+Engineer',
+          tags: ['Python', 'XGBoost', 'Scikit-Learn', 'Feature Engineering', 'EDA', 'Pandas'] 
+        },
+        bi: { 
+          sal: '$118,000 / yr', 
+          demand: '+26% Growth', 
+          jobs: '7,400 Listings', 
+          url: 'https://www.se.com/in/en/about-us/careers/overview.jsp',
+          tags: ['SQL', 'Power BI (PL-300)', 'Tableau', 'Excel', 'ETL Pipelines', 'BigQuery'] 
+        }
       };
       const d = data[role];
       sal.textContent = d.sal;
       demand.textContent = d.demand;
       jobs.textContent = d.jobs;
       skills.innerHTML = d.tags.map(t => '<span class="tag">' + t + '</span>').join('');
+      if (applyLink) applyLink.href = d.url;
     }
 
     function runHalCheck() {
