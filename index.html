@@ -460,7 +460,7 @@
       <div class="section-label reveal">What I've Built</div>
       <h2 class="section-title reveal">Featured Projects</h2>
       <div class="project-filters reveal">
-        <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects (5)</button>
+        <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects (6)</button>
         <button class="filter-btn" onclick="filterProjects('genai', this)">🤖 GenAI &amp; RAG</button>
         <button class="filter-btn" onclick="filterProjects('multiagent', this)">👥 Multi-Agent Systems</button>
         <button class="filter-btn" onclick="filterProjects('etl', this)">⚡ Pipelines &amp; Vector DBs</button>
@@ -468,9 +468,29 @@
       </div>
       <div class="projects-grid">
         
-        <!-- Project 1 -->
-        <div class="project-card reveal" data-category="genai multiagent">
-          <div class="project-number">01 / Featured Swarm</div>
+        <!-- Project 1 (New AI Knowledge Hub) -->
+        <div class="project-card reveal" data-category="genai etl ml" style="border-color:rgba(6,214,160,0.4); box-shadow:0 0 28px rgba(6,214,160,0.12);">
+          <div class="project-number" style="color:var(--accent-2);">01 / 🚀 Live AI Platform</div>
+          <h3 class="project-name">AI Knowledge Hub &amp; Multi-Document Intelligence Platform</h3>
+          <div class="project-desc">
+            <ul>
+              <li>Engineered a full-stack multi-tenant AI Platform combining <strong>Groq ultra-fast LPU inference</strong>, multi-document intelligence (PDF, TXT, CSV), and real-time DuckDuckGo web search grounding.</li>
+              <li>Integrated predictive temporal reasoning (Past foundations, Present state, 2030+ Future forecasts), societal impact synthesis, and automated ReportLab executive PDF report generator (1-click export).</li>
+              <li>Implemented SQLite user authentication with SHA-256 password hashing, custom multi-workspaces, and full-text searchable conversation history.</li>
+            </ul>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;">
+            <a href="https://ai-knowledge-app-bj7y4qz9qomjzu3owefkxe.streamlit.app/" target="_blank" rel="noopener" class="sim-btn" style="background:rgba(6,214,160,0.18); border-color:#06d6a0; color:#06d6a0; font-weight:600; text-decoration:none;">🚀 Launch Live Web App &rarr;</a>
+            <a href="https://github.com/aarthis20040708-collab/ai-knowledge-hub" target="_blank" rel="noopener" class="sim-btn" style="border-color:rgba(56,189,248,0.4); text-decoration:none;">🐙 GitHub Repo &rarr;</a>
+          </div>
+          <div class="project-tech">
+            <span class="tech-chip">Streamlit</span><span class="tech-chip">Groq LPU</span><span class="tech-chip">Python</span><span class="tech-chip">PyPDF</span><span class="tech-chip">ReportLab</span><span class="tech-chip">SQLite3</span><span class="tech-chip">Live Web Grounding</span>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal reveal-delay-1" data-category="genai multiagent">
+          <div class="project-number">02 / Featured Swarm</div>
           <h3 class="project-name">Multi-Agent Enterprise Software Crew &amp; Latency Profiler</h3>
           <div class="project-desc">
             <ul>
@@ -488,9 +508,9 @@
           </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="project-card reveal reveal-delay-1" data-category="genai etl">
-          <div class="project-number">02 / Featured Pipeline</div>
+        <!-- Project 3 -->
+        <div class="project-card reveal reveal-delay-2" data-category="genai etl">
+          <div class="project-number">03 / Featured Pipeline</div>
           <h3 class="project-name">TalentRadar AI — Async GenAI Pipeline &amp; pgvector Search</h3>
           <div class="project-desc">
             <ul>
@@ -509,9 +529,9 @@
           </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="project-card reveal reveal-delay-2" data-category="genai ml">
-          <div class="project-number">03 / RAG Evaluation</div>
+        <!-- Project 4 -->
+        <div class="project-card reveal reveal-delay-3" data-category="genai ml">
+          <div class="project-number">04 / RAG Evaluation</div>
           <h3 class="project-name">RAG Evaluation &amp; Hallucination Detector Framework</h3>
           <div class="project-desc">
             <ul>
@@ -528,9 +548,9 @@
           </div>
         </div>
 
-        <!-- Project 4 -->
-        <div class="project-card reveal reveal-delay-3" data-category="etl">
-          <div class="project-number">04 / Cloud DataOps</div>
+        <!-- Project 5 -->
+        <div class="project-card reveal" data-category="etl">
+          <div class="project-number">05 / Cloud DataOps</div>
           <h3 class="project-name">FinOps Cloud Cost Optimization &amp; Anomaly Engine</h3>
           <div class="project-desc">
             <ul>
@@ -547,9 +567,9 @@
           </div>
         </div>
 
-        <!-- Project 5 -->
-        <div class="project-card reveal" data-category="ml">
-          <div class="project-number">05 / Machine Learning</div>
+        <!-- Project 6 -->
+        <div class="project-card reveal reveal-delay-1" data-category="ml">
+          <div class="project-number">06 / Machine Learning</div>
           <h3 class="project-name">Telecom Customer Churn Prediction &amp; Analytics Dashboard</h3>
           <div class="project-desc">
             <ul>
@@ -1143,6 +1163,10 @@
       {
         keys: ['skills', 'tech stack', 'fastapi', 'pgvector', 'asyncio', 'python', 'sql'],
         ans: 'Aarthi\'s core technical stack includes:<br/>• <b>Backend & Concurrency:</b> Python, FastAPI, AsyncIO, Uvicorn, REST APIs, Pydantic v2<br/>• <b>Vector DBs & GenAI:</b> pgvector, Qdrant, RAG architectures, LangChain, CrewAI, Groq LLM API<br/>• <b>Data Engineering:</b> ETL pipelines, Supabase/PostgreSQL, BigQuery, GitHub Actions Cron<br/>• <b>Machine Learning:</b> Scikit-Learn, XGBoost, Pandas'
+      },
+      {
+        keys: ['knowledge hub', 'document assistant', 'ai knowledge', 'streamlit', 'pdf generator', 'live app'],
+        ans: '<b>AI Knowledge Hub & Document Assistant</b> is Aarthi\'s full-stack live AI platform: <br/>• <b>Ultra-Fast Inference:</b> Groq LPUs with real-time word streaming & model swapping.<br/>• <b>Multi-Document Q&A:</b> Upload multiple PDFs/TXT/CSV files for cross-document synthesis.<br/>• <b>Live Grounding:</b> DDGS real-time web search integration.<br/>• <b>1-Click PDF Export:</b> Executive report generator built with ReportLab.<br/>🚀 <a href="https://ai-knowledge-app-bj7y4qz9qomjzu3owefkxe.streamlit.app/" target="_blank" style="color:var(--accent-2); font-weight:600;">Launch Live App &rarr;</a>'
       },
       {
         keys: ['talentradar', 'job market', 'hiring', 'supabase', 'github actions', 'etl pipeline', 'vector search'],
