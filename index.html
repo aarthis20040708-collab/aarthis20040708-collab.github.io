@@ -135,11 +135,12 @@
     .project-card:hover { border-color: var(--border-glow); box-shadow: var(--shadow-card), var(--shadow-glow); transform: translateY(-4px); }
     .project-number { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); }
     .project-name { font-family: var(--font-head); font-size: 1.2rem; font-weight: 600; color: var(--text-primary); line-height: 1.3; }
-    .project-desc { font-size: 0.92rem; color: var(--text-body); line-height: 1.7; }
-    .project-desc ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
-    .project-desc ul li { display: flex; gap: 8px; }
-    .project-desc ul li::before { content: '▹'; color: var(--accent-2); flex-shrink: 0; }
-    .project-tech { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+    .project-desc { font-size: 0.93rem; color: var(--text-body); line-height: 1.7; }
+    .project-desc ul { list-style: none; display: flex; flex-direction: column; gap: 12px; margin: 12px 0 6px; padding: 0; }
+    .project-desc ul li { position: relative; padding-left: 22px; font-size: 0.91rem; line-height: 1.65; color: #b4c6dd; }
+    .project-desc ul li::before { content: '▹'; position: absolute; left: 0; top: 1px; color: var(--accent-2); font-size: 0.95rem; line-height: 1; font-weight: bold; }
+    .project-desc strong { color: var(--text-primary); font-weight: 600; }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 10px; }
     .tech-chip { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 5px; padding: 3px 9px; }
 
     /* SKILLS */
@@ -474,9 +475,11 @@
           <h3 class="project-name">AI Knowledge Hub &amp; Multi-Document Intelligence Platform</h3>
           <div class="project-desc">
             <ul>
-              <li>Engineered a full-stack multi-tenant AI Platform combining <strong>Groq ultra-fast LPU inference</strong>, multi-document intelligence (PDF, TXT, CSV), and real-time DuckDuckGo web search grounding.</li>
-              <li>Integrated predictive temporal reasoning (Past foundations, Present state, 2030+ Future forecasts), societal impact synthesis, and automated ReportLab executive PDF report generator (1-click export).</li>
-              <li>Implemented SQLite user authentication with SHA-256 password hashing, custom multi-workspaces, and full-text searchable conversation history.</li>
+              <li><strong>Ultra-Fast Streaming Engine:</strong> Multi-turn conversational AI with real-time token streaming and dynamic LLM model swapping on Groq LPUs.</li>
+              <li><strong>Multi-Document Q&amp;A:</strong> Simultaneous text extraction, metrics tracking, and cross-document synthesis across multiple PDF, TXT, MD, and CSV files.</li>
+              <li><strong>Live Web Grounding:</strong> Real-time internet search integration (DDGS) to ground responses in up-to-date facts and breaking developments.</li>
+              <li><strong>1-Click Executive PDF Export:</strong> Formatted, styled report generation built with ReportLab with instant download capabilities.</li>
+              <li><strong>User Auth &amp; Workspaces:</strong> SQLite data store with SHA-256 password security, custom workspaces, and full-text searchable chat history.</li>
             </ul>
           </div>
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;">
