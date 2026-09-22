@@ -90,18 +90,19 @@
 
     /* ABOUT */
     #about { background: var(--bg-surface); }
-    .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 72px; align-items: center; }
-    .about-visual { position: relative; }
-    .avatar-ring { width: 280px; height: 280px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%); display: flex; align-items: center; justify-content: center; position: relative; margin: 0 auto; cursor: pointer; overflow: hidden; }
-    .avatar-ring::before { content: ''; position: absolute; inset: -12px; border-radius: 50%; border: 1.5px solid rgba(56,189,248,0.2); animation: rotateBorder 8s linear infinite; pointer-events: none; }
-    .avatar-ring::after { content: ''; position: absolute; inset: -24px; border-radius: 50%; border: 1px dashed rgba(56,189,248,0.1); animation: rotateBorder 14s linear infinite reverse; pointer-events: none; }
+    .about-grid { display: grid; grid-template-columns: 1.1fr 1.5fr; gap: 64px; align-items: center; }
+    .about-visual { position: relative; display: flex; justify-content: center; }
+    .avatar-ring { width: 360px; height: 360px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%); display: flex; align-items: center; justify-content: center; position: relative; margin: 0 auto; cursor: pointer; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 32px rgba(56,189,248,0.25); }
+    .avatar-ring::before { content: ''; position: absolute; inset: -14px; border-radius: 50%; border: 2px solid rgba(56,189,248,0.3); animation: rotateBorder 8s linear infinite; pointer-events: none; }
+    .avatar-ring::after { content: ''; position: absolute; inset: -28px; border-radius: 50%; border: 1.5px dashed rgba(6,214,160,0.25); animation: rotateBorder 14s linear infinite reverse; pointer-events: none; }
     @keyframes rotateBorder { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-    .avatar-initials { font-family: var(--font-head); font-size: 4.5rem; font-weight: 700; color: var(--bg-base); letter-spacing: -0.04em; position: relative; z-index: 1; display: none; }
-    .avatar-photo { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: center top; position: relative; z-index: 2; display: block; }
+    .avatar-initials { font-family: var(--font-head); font-size: 5.5rem; font-weight: 700; color: var(--bg-base); letter-spacing: -0.04em; position: relative; z-index: 1; display: none; }
+    .avatar-photo { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: center top; position: relative; z-index: 2; display: block; transition: transform 0.4s ease; }
+    .avatar-ring:hover .avatar-photo { transform: scale(1.04); }
     .avatar-ring:hover .avatar-overlay { opacity: 1; }
     .avatar-overlay { position: absolute; inset: 0; border-radius: 50%; background: rgba(8,12,20,0.65); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; opacity: 0; transition: opacity 0.3s ease; z-index: 3; pointer-events: none; }
-    .avatar-overlay span { font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent); text-align: center; padding: 0 16px; }
-    .avatar-overlay-icon { font-size: 1.6rem; }
+    .avatar-overlay span { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); text-align: center; padding: 0 16px; }
+    .avatar-overlay-icon { font-size: 1.8rem; }
     .about-text { font-size: 1.07rem; color: var(--text-body); line-height: 1.85; margin-bottom: 36px; }
     .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
     .tag { font-family: var(--font-mono); font-size: 0.77rem; color: var(--accent); background: var(--accent-dim); border: 1px solid rgba(56,189,248,0.2); border-radius: 6px; padding: 5px 12px; }
@@ -289,12 +290,13 @@
 
     @media (max-width: 900px) {
       .about-grid { grid-template-columns: 1fr; gap: 48px; }
-      .avatar-ring { width: 200px; height: 200px; }
+      .avatar-ring { width: 280px; height: 280px; }
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
       .projects-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 700px) {
       .section { padding: 72px 0; }
+      .avatar-ring { width: 240px; height: 240px; }
       .nav-links { display: none; flex-direction: column; position: fixed; top: 70px; left: 0; right: 0; background: var(--bg-surface); border-bottom: 1px solid var(--border); padding: 20px 28px; gap: 4px; }
       .nav-links.open { display: flex; }
       .hamburger { display: flex; }
@@ -399,20 +401,19 @@
           <div class="section-label reveal">Who I Am</div>
           <h2 style="font-size:clamp(2rem,4vw,2.8rem);font-weight:700;color:var(--text-primary);margin-bottom:24px;" class="reveal">About Me</h2>
           <p class="about-text reveal">
-            I am a B.Tech graduate in Artificial Intelligence &amp; Data Science from Panimalar Engineering College, Chennai.
-            I specialize in developing production <strong style="color:var(--text-primary)">Machine Learning models</strong>, applied Generative AI applications, RAG architectures, and intelligent web microservices.
+            I am an <strong style="color:var(--accent);">AI &amp; ML Engineer</strong> and B.Tech graduate in Artificial Intelligence &amp; Data Science from Panimalar Engineering College, Chennai. I build end-to-end intelligent systems spanning <strong style="color:var(--text-primary);">Generative AI applications</strong>, autonomous multi-agent swarms, RAG architectures, high-performance ML pipelines, and production web services.
           </p>
           <p class="about-text reveal reveal-delay-1">
-            With hands-on experience in training high-accuracy supervised classifiers (XGBoost, Scikit-Learn), orchestrating multi-agent LLM systems (CrewAI, LangChain), and deploying FastAPI endpoints — I deliver scalable AI/ML solutions from raw data to production.
+            Certified in <strong style="color:var(--accent-2);">AI Foundations by OpenAI</strong> and <strong style="color:var(--accent-2);">Power BI by Microsoft (PL-300)</strong>, my technical expertise bridges cutting-edge LLM engineering with robust data engineering. I build with <strong>Python, FastAPI, Streamlit, PostgreSQL/pgvector, LangChain, and Groq LPUs</strong> — delivering scalable, low-latency AI solutions that create tangible real-world and societal impact.
           </p>
           <div class="about-tags reveal reveal-delay-2">
-            <span class="tag">Machine Learning</span>
-            <span class="tag">Generative AI</span>
-            <span class="tag">XGBoost &amp; Scikit-Learn</span>
-            <span class="tag">RAG Architectures</span>
-            <span class="tag">FastAPI Microservices</span>
-            <span class="tag">LangChain &amp; CrewAI</span>
-            <span class="tag">pgvector &amp; Embeddings</span>
+            <span class="tag" style="border-color:rgba(6,214,160,0.4); color:var(--accent-2);">🤖 OpenAI Certified</span>
+            <span class="tag">Generative AI &amp; LLMs</span>
+            <span class="tag">Autonomous Multi-Agent Swarms</span>
+            <span class="tag">RAG &amp; pgvector Search</span>
+            <span class="tag">FastAPI &amp; Streamlit Apps</span>
+            <span class="tag">Supervised ML (95% Accuracy)</span>
+            <span class="tag">ETL &amp; Cloud DataOps</span>
           </div>
           <div class="about-contacts reveal reveal-delay-3">
             <div class="contact-item"><div class="contact-icon">📧</div><a href="mailto:aarthi784197@gmail.com" onclick="copyText(event, 'aarthi784197@gmail.com', 'Email copied to clipboard!')" title="Click to copy email" style="color:var(--text-body)">aarthi784197@gmail.com</a></div>
