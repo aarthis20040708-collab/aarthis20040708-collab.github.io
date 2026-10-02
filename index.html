@@ -3,62 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aarthi S | AI & ML Engineer</title>
-  <meta name="description" content="Portfolio of Aarthi S — AI & ML Engineer specializing in Generative AI, Multi-Agent Systems, RAG Architectures, pgvector, and Machine Learning." />
-  <meta name="keywords" content="Aarthi S, AI Engineer, Machine Learning, Generative AI, RAG, pgvector, FastAPI, Python, Streamlit" />
-
-  <!-- Google Fonts: Plus Jakarta Sans & Inter & JetBrains Mono -->
+  <title>Aarthi S | AI & ML Engineer • Autonomous Swarms & RAG</title>
+  <meta name="description" content="Portfolio of Aarthi S — AI & ML Engineer specializing in Generative AI Multi-Agent Swarms, Sub-50ms pgvector RAG Pipelines, and 95% Accuracy ML Systems." />
+  
+  <!-- Premium Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     /* ==========================================================================
-       DESIGN TOKENS — SINGLE COHESIVE MODERN ACCENT PALETTE
-       (To change to Red later if desired, just change --accent to #ef4444)
+       CYBER-OLED DESIGN SYSTEM — ULTRA-MODERN HIGH IMPACT
        ========================================================================== */
     :root {
-      /* Single Primary Accent: Modern Electric Blue */
-      --accent: #3b82f6;
-      --accent-hover: #2563eb;
-      --accent-light: #60a5fa;
-      --accent-dim: rgba(59, 130, 246, 0.08);
-      --accent-border: rgba(59, 130, 246, 0.25);
-      --accent-glow: rgba(59, 130, 246, 0.15);
-
-      /* Dark Background & Surfaces */
-      --bg-base: #090d16;
-      --bg-surface: #0e1422;
-      --bg-card: #131b2e;
-      --bg-card-hover: #18223a;
-      --bg-input: #0b111e;
-
-      /* Borders */
+      /* Signature Electric Cyber Blue Accent */
+      --primary: #00d2ff;
+      --primary-rgb: 0, 210, 255;
+      --primary-dark: #0077fe;
+      --primary-glow: rgba(0, 210, 255, 0.35);
+      --primary-dim: rgba(0, 210, 255, 0.08);
+      --primary-border: rgba(0, 210, 255, 0.28);
+      
+      /* Deep OLED Canvas & Glass Surfaces */
+      --bg-base: #04070e;
+      --bg-surface: #080d19;
+      --bg-card: rgba(12, 20, 37, 0.65);
+      --bg-card-hover: rgba(18, 30, 56, 0.85);
+      --bg-input: rgba(6, 11, 22, 0.9);
+      
+      /* Borders & Glows */
       --border: rgba(255, 255, 255, 0.08);
-      --border-hover: rgba(59, 130, 246, 0.35);
-
-      /* Typography Colors */
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --text-faint: #64748b;
-
-      /* Font Families */
+      --border-bright: rgba(0, 210, 255, 0.45);
+      
+      /* Typography */
+      --text-white: #ffffff;
+      --text-main: #e2e8f0;
+      --text-muted: #8e9fb5;
+      --text-faint: #4b5d73;
+      
+      --font-display: 'Space Grotesk', sans-serif;
       --font-heading: 'Plus Jakarta Sans', sans-serif;
-      --font-body: 'Inter', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
-
-      /* Radius & Shadows */
-      --radius-sm: 6px;
-      --radius-md: 12px;
-      --radius-lg: 18px;
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
       --radius-full: 9999px;
-      --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
-      --shadow-glow: 0 0 25px var(--accent-glow);
-
-      --transition: 0.25s ease;
+      
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
-    /* Reset & Base */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -67,166 +62,213 @@
 
     html {
       scroll-behavior: smooth;
+      background-color: var(--bg-base);
     }
 
     body {
       background-color: var(--bg-base);
-      color: var(--text-muted);
-      font-family: var(--font-body);
+      color: var(--text-main);
+      font-family: var(--font-heading);
       font-size: 16px;
       line-height: 1.7;
       overflow-x: hidden;
+      position: relative;
     }
 
     ::selection {
-      background: var(--accent);
-      color: #ffffff;
+      background: var(--primary);
+      color: #04070e;
     }
 
-    a {
-      color: var(--text-main);
-      text-decoration: none;
-      transition: var(--transition);
+    /* Ambient Cyber Background Grid & Noise */
+    .bg-grid-overlay {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
     }
 
-    h1, h2, h3, h4, h5 {
-      font-family: var(--font-heading);
-      color: var(--text-main);
+    .bg-ambient-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.45;
+      animation: floatOrb 18s ease-in-out infinite alternate;
+    }
+    .orb-1 {
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, var(--primary-dark), transparent 70%);
+      top: -100px;
+      right: -100px;
+    }
+    .orb-2 {
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, var(--primary), transparent 70%);
+      bottom: 10%;
+      left: -150px;
+      animation-delay: -6s;
+    }
+
+    @keyframes floatOrb {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(60px, -40px) scale(1.1); }
+      100% { transform: translate(-30px, 50px) scale(0.95); }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-base); }
+    ::-webkit-scrollbar-thumb { background: rgba(0, 210, 255, 0.3); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+    /* Typography & Core Helpers */
+    h1, h2, h3, h4 {
+      color: var(--text-white);
+      font-family: var(--font-display);
       font-weight: 700;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-    }
-
-    /* Scrollbar */
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: var(--bg-base);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.12);
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--accent);
-    }
-
-    /* Layout Containers */
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-
-    .section {
-      padding: 100px 0;
-    }
-
-    .section-header {
-      margin-bottom: 50px;
-    }
-
-    .section-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--accent-light);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 12px;
-    }
-
-    .section-badge::before {
-      content: '';
-      display: inline-block;
-      width: 18px;
-      height: 2px;
-      background: var(--accent);
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 3.8vw, 2.75rem);
-      font-weight: 800;
-      color: var(--text-main);
+      line-height: 1.15;
       letter-spacing: -0.03em;
     }
 
-    .section-subtitle {
-      font-size: 1.05rem;
+    .gradient-title {
+      background: linear-gradient(135deg, #ffffff 40%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 16px;
+      background: var(--primary-dim);
+      border: 1px solid var(--primary-border);
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 18px;
+      box-shadow: 0 0 20px var(--primary-dim);
+    }
+
+    .section-title {
+      font-size: clamp(2.3rem, 4.5vw, 3.4rem);
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 1.1rem;
       color: var(--text-muted);
-      max-width: 650px;
-      margin-top: 12px;
+      max-width: 640px;
+      line-height: 1.8;
     }
 
-    .section-divider {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
-    }
-
-    /* Clean Card */
-    .card {
+    /* 3D Glass Bento Card with Mouse Spotlight */
+    .bento-card {
+      position: relative;
       background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      transition: var(--transition);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform 0.4s var(--ease-out), border-color 0.4s ease, box-shadow 0.4s ease;
     }
 
-    .card:hover {
-      border-color: var(--border-hover);
-      background: var(--bg-card-hover);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-card), var(--shadow-glow);
+    .bento-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(500px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(var(--primary-rgb), 0.15), transparent 45%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+      z-index: 1;
     }
 
-    /* Clean Buttons */
+    .bento-card:hover::before {
+      opacity: 1;
+    }
+
+    .bento-card:hover {
+      border-color: var(--border-bright);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 35px var(--primary-dim);
+    }
+
+    /* Modern Neon Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      font-family: var(--font-heading);
-      font-size: 0.92rem;
-      font-weight: 600;
-      padding: 12px 24px;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 14px 28px;
       border-radius: var(--radius-sm);
       cursor: pointer;
-      transition: var(--transition);
+      text-decoration: none;
+      transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease, background 0.3s ease;
+      position: relative;
+      overflow: hidden;
       border: none;
     }
 
     .btn-primary {
-      background: var(--accent);
-      color: #ffffff;
+      background: var(--primary);
+      color: #04070e;
+      box-shadow: 0 4px 25px var(--primary-glow);
     }
 
     .btn-primary:hover {
-      background: var(--accent-hover);
-      color: #ffffff;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 35px var(--primary-glow), 0 0 15px var(--primary);
+      color: #04070e;
     }
 
     .btn-secondary {
-      background: var(--bg-card);
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border);
-      color: var(--text-main);
+      color: var(--text-white);
+      backdrop-filter: blur(12px);
     }
 
     .btn-secondary:hover {
-      border-color: var(--accent);
-      background: var(--accent-dim);
-      color: var(--text-main);
-      transform: translateY(-2px);
+      border-color: var(--primary);
+      background: var(--primary-dim);
+      color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px var(--primary-dim);
     }
 
     .btn-sm {
-      padding: 8px 16px;
-      font-size: 0.82rem;
+      padding: 8px 18px;
+      font-size: 0.85rem;
       border-radius: var(--radius-sm);
     }
 
@@ -239,52 +281,78 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      background: rgba(9, 13, 22, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      padding: 20px 0;
+      transition: all 0.3s ease;
+    }
+
+    #navbar.scrolled {
+      padding: 12px 0;
+      background: rgba(4, 7, 14, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
-      transition: var(--transition);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 70px;
     }
 
-    .nav-brand {
-      font-family: var(--font-heading);
-      font-size: 1.25rem;
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
       font-weight: 800;
-      color: var(--text-main);
+      color: var(--text-white);
+      letter-spacing: -0.04em;
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 6px;
+      text-decoration: none;
     }
 
-    .nav-brand span {
-      color: var(--accent-light);
+    .nav-logo-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--primary);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--primary);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 6px;
       list-style: none;
     }
 
     .nav-links a {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       font-weight: 500;
       color: var(--text-muted);
-      padding: 8px 14px;
+      padding: 8px 16px;
       border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all 0.25s ease;
     }
 
     .nav-links a:hover {
-      color: var(--text-main);
-      background: var(--accent-dim);
+      color: var(--text-white);
+      background: var(--primary-dim);
+    }
+
+    .nav-cta-btn {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #04070e !important;
+      font-weight: 700 !important;
+      border-radius: var(--radius-full) !important;
+      box-shadow: 0 4px 20px var(--primary-glow);
+    }
+
+    .nav-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px var(--primary-glow) !important;
     }
 
     .hamburger {
@@ -294,119 +362,189 @@
       background: none;
       border: none;
       cursor: pointer;
-      padding: 6px;
     }
-
     .hamburger span {
       display: block;
-      width: 22px;
+      width: 24px;
       height: 2px;
-      background: var(--text-main);
+      background: var(--text-white);
       border-radius: 2px;
     }
 
     /* ==========================================================================
-       HERO SECTION
+       HERO SECTION (3D CANVAS + INTERACTIVE PROOF)
        ========================================================================== */
     #hero {
-      padding-top: 150px;
-      padding-bottom: 80px;
-      min-height: 90vh;
+      position: relative;
+      min-height: 100vh;
       display: flex;
       align-items: center;
+      padding-top: 130px;
+      padding-bottom: 70px;
+      overflow: hidden;
+    }
+
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.25fr 0.85fr;
-      gap: 56px;
+      grid-template-columns: 1.2fr 0.9fr;
+      gap: 54px;
       align-items: center;
+      position: relative;
+      z-index: 2;
     }
 
-    .hero-badge {
+    .hero-live-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: var(--accent-dim);
-      border: 1px solid var(--accent-border);
+      gap: 10px;
+      padding: 7px 18px;
+      background: rgba(0, 210, 255, 0.08);
+      border: 1px solid var(--primary-border);
       border-radius: var(--radius-full);
-      padding: 6px 14px;
       font-family: var(--font-mono);
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: var(--accent-light);
+      font-size: 0.8rem;
+      color: var(--primary);
+      margin-bottom: 24px;
+      box-shadow: 0 0 25px rgba(0, 210, 255, 0.15);
+    }
+
+    .pulse-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.7);
+      animation: pulseRings 2s infinite;
+    }
+
+    @keyframes pulseRings {
+      0% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.7); }
+      70% { box-shadow: 0 0 0 12px rgba(0, 210, 255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0); }
+    }
+
+    .hero-main-title {
+      font-size: clamp(3.2rem, 6.8vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 16px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-type-row {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 2.8vw, 1.85rem);
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .typing-cursor {
+      color: var(--primary);
+      border-right: 3px solid var(--primary);
+      animation: blinkCursor 0.8s step-end infinite;
+      white-space: nowrap;
+    }
+
+    @keyframes blinkCursor {
+      50% { border-color: transparent; }
+    }
+
+    .hero-summary {
+      font-size: 1.12rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    .hero-summary strong {
+      color: var(--text-white);
+      font-weight: 600;
+    }
+
+    .hero-button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 50px;
+    }
+
+    /* Hero Avatar Hologram Card */
+    .hero-visual-card {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border: 1px solid var(--primary-border);
+      box-shadow: 0 0 40px rgba(0, 210, 255, 0.15);
+    }
+
+    .avatar-cyber-halo {
+      position: relative;
+      width: 240px;
+      height: 240px;
       margin-bottom: 24px;
     }
 
-    .hero-badge-dot {
-      width: 7px;
-      height: 7px;
+    .avatar-halo-ring-1 {
+      position: absolute;
+      inset: -14px;
       border-radius: 50%;
-      background: #10b981;
-      box-shadow: 0 0 8px #10b981;
+      border: 2px dashed var(--primary-border);
+      animation: rotateRing 14s linear infinite;
     }
 
-    .hero-name {
-      font-size: clamp(2.8rem, 5.5vw, 4.4rem);
-      font-weight: 800;
-      color: var(--text-main);
-      letter-spacing: -0.04em;
-      line-height: 1.1;
-      margin-bottom: 12px;
-    }
-
-    .hero-role {
-      font-size: clamp(1.15rem, 2.4vw, 1.45rem);
-      font-weight: 600;
-      color: var(--accent-light);
-      margin-bottom: 20px;
-    }
-
-    .hero-desc {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      line-height: 1.8;
-      margin-bottom: 36px;
-      max-width: 580px;
-    }
-
-    .hero-desc strong {
-      color: var(--text-main);
-      font-weight: 600;
-    }
-
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 48px;
-    }
-
-    /* Clean Hero Avatar Box */
-    .hero-avatar-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .avatar-frame {
-      width: 300px;
-      height: 300px;
+    .avatar-halo-ring-2 {
+      position: absolute;
+      inset: -6px;
       border-radius: 50%;
-      background: linear-gradient(180deg, var(--accent) 0%, rgba(59, 130, 246, 0.1) 100%);
-      padding: 3px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), var(--shadow-glow);
+      border: 2px solid var(--primary);
+      opacity: 0.6;
+      animation: rotateRing 8s linear infinite reverse;
+    }
+
+    @keyframes rotateRing {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .avatar-photo-frame {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      box-shadow: 0 0 35px var(--primary-glow);
+      overflow: hidden;
       position: relative;
+      z-index: 2;
     }
 
-    .avatar-frame img {
+    .avatar-photo-frame img {
       width: 100%;
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
       object-position: center top;
       display: block;
-      background: var(--bg-card);
+      transition: transform 0.5s ease;
+    }
+
+    .avatar-cyber-halo:hover img {
+      transform: scale(1.08);
     }
 
     .avatar-initials-fallback {
@@ -414,483 +552,644 @@
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background: var(--bg-card);
+      background: #091224;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-heading);
-      font-size: 4.5rem;
+      font-family: var(--font-display);
+      font-size: 4rem;
       font-weight: 800;
-      color: var(--accent-light);
+      color: var(--primary);
     }
 
-    /* Stats Row */
-    .stats-row {
+    /* Live Telemetry Ticker Bento */
+    .hero-metrics-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      padding-top: 36px;
-      border-top: 1px solid var(--border);
+      gap: 18px;
+      margin-top: 60px;
     }
 
-    .stat-item {
+    .metric-bento {
+      padding: 24px 28px;
       display: flex;
       flex-direction: column;
     }
 
-    .stat-number {
-      font-family: var(--font-heading);
-      font-size: 1.85rem;
+    .metric-val {
+      font-family: var(--font-display);
+      font-size: 2.3rem;
       font-weight: 800;
-      color: var(--text-main);
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-    }
-
-    .stat-number span {
-      color: var(--accent-light);
-    }
-
-    .stat-label {
-      font-size: 0.78rem;
-      color: var(--text-faint);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-top: 4px;
-    }
-
-    /* ==========================================================================
-       ABOUT SECTION
-       ========================================================================== */
-    #about {
-      background: var(--bg-surface);
-    }
-
-    .about-text-content {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      line-height: 1.85;
-      margin-bottom: 28px;
-    }
-
-    .about-text-content strong {
-      color: var(--text-main);
-    }
-
-    .about-highlights {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 32px;
-    }
-
-    .highlight-card {
-      padding: 24px;
-    }
-
-    .highlight-card h4 {
-      font-size: 1.05rem;
-      color: var(--accent-light);
+      color: var(--text-white);
+      line-height: 1;
       margin-bottom: 8px;
     }
 
-    .highlight-card p {
-      font-size: 0.9rem;
+    .metric-val span {
+      color: var(--primary);
+    }
+
+    .metric-title {
+      font-size: 0.85rem;
       color: var(--text-muted);
-      line-height: 1.6;
+      font-weight: 500;
     }
 
     /* ==========================================================================
-       FEATURED PROJECTS
+       INTERACTIVE AI ARENA / LIVE SIMULATION LAB
        ========================================================================== */
-    #projects {
-      background: var(--bg-base);
+    #arena {
+      background: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-surface) 100%);
     }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .project-card {
-      padding: 30px;
+    .arena-nav-tabs {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
     }
 
-    .project-header {
-      display: flex;
+    .arena-tab-btn {
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
-    }
-
-    .project-tag {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--accent-light);
-      background: var(--accent-dim);
-      border: 1px solid var(--accent-border);
-      padding: 3px 10px;
-      border-radius: 4px;
-    }
-
-    .project-name {
-      font-size: 1.22rem;
+      gap: 10px;
+      padding: 12px 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+      font-size: 0.92rem;
       font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 12px;
-      line-height: 1.35;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
-    .project-bullets {
-      list-style: none;
+    .arena-tab-btn:hover, .arena-tab-btn.active {
+      color: #04070e;
+      background: var(--primary);
+      border-color: var(--primary);
+      box-shadow: 0 4px 20px var(--primary-glow);
+    }
+
+    .arena-panel {
+      display: none;
+      animation: fadeIn 0.4s var(--ease-out) forwards;
+    }
+
+    .arena-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .arena-box {
+      padding: 36px;
+      border: 1px solid var(--primary-border);
+    }
+
+    /* Arena 1: Vector Matcher */
+    .search-action-row {
       display: flex;
-      flex-direction: column;
-      gap: 8px;
+      gap: 12px;
       margin-bottom: 24px;
     }
 
-    .project-bullets li {
-      position: relative;
-      padding-left: 20px;
-      font-size: 0.91rem;
-      color: var(--text-muted);
-      line-height: 1.6;
+    .cyber-input {
+      flex: 1;
+      background: var(--bg-input);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 20px;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      color: var(--text-white);
+      outline: none;
+      transition: all 0.3s ease;
     }
 
-    .project-bullets li::before {
-      content: '▹';
-      position: absolute;
-      left: 0;
-      color: var(--accent-light);
-      font-weight: bold;
+    .cyber-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 20px var(--primary-dim);
     }
 
-    .project-bullets strong {
-      color: var(--text-main);
-    }
-
-    .project-actions {
+    .vector-pill-shortcuts {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 20px;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 28px;
     }
 
-    .project-tech-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-    }
-
-    .tech-pill {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--text-faint);
-      background: rgba(255, 255, 255, 0.03);
+    .shortcut-pill {
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 3px 8px;
+      border-radius: var(--radius-full);
+      padding: 5px 14px;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.25s ease;
     }
 
-    /* ==========================================================================
-       TECHNICAL SKILLS SECTION
-       ========================================================================== */
-    #skills {
-      background: var(--bg-surface);
+    .shortcut-pill:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-dim);
     }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .vector-matches-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .vector-match-item {
+      background: rgba(8, 14, 26, 0.8);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 20px;
     }
 
-    .skill-card {
-      padding: 24px;
+    .progress-bar-rail {
+      width: 160px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 4px;
     }
 
-    .skill-card h4 {
-      font-size: 1rem;
-      color: var(--text-main);
-      margin-bottom: 16px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+      border-radius: 4px;
+      transition: width 0.6s var(--ease-out);
+    }
+
+    /* Arena 2: Multi-Agent Swarm Flow */
+    .swarm-pipeline-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .swarm-node-card {
+      background: rgba(8, 14, 26, 0.8);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .swarm-node-card.active {
+      border-color: var(--primary);
+      box-shadow: 0 0 25px var(--primary-dim);
+    }
+
+    .swarm-node-header {
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: space-between;
     }
 
-    .skill-pill-wrap {
+    .swarm-node-badge {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+    }
+
+    .swarm-node-badge.running {
+      background: var(--primary-dim);
+      color: var(--primary);
+      border: 1px solid var(--primary-border);
+    }
+
+    .terminal-output-window {
+      background: #03050a;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: #9fe7ff;
+      height: 190px;
+      overflow-y: auto;
+      line-height: 1.65;
+    }
+
+    /* ==========================================================================
+       FEATURED PROJECTS (BENTO GRID WITH DEEP METRICS)
+       ========================================================================== */
+    #projects {
+      background: var(--bg-surface);
+    }
+
+    .projects-bento-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .project-bento {
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-top-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .project-index-pill {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary);
+      background: var(--primary-dim);
+      border: 1px solid var(--primary-border);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+    }
+
+    .project-heading {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+
+    .project-bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .project-bullet-list li {
+      position: relative;
+      padding-left: 22px;
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .project-bullet-list li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .project-bullet-list strong {
+      color: var(--text-white);
+    }
+
+    .project-btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .project-tech-chips {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
     }
 
-    .skill-badge {
+    .tech-tag {
       font-family: var(--font-mono);
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: var(--text-muted);
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid var(--border);
       border-radius: 4px;
       padding: 4px 10px;
-      transition: var(--transition);
     }
 
-    .skill-badge:hover {
-      color: var(--accent-light);
-      border-color: var(--accent-border);
-      background: var(--accent-dim);
+    /* ==========================================================================
+       TECHNICAL SKILL MATRIX
+       ========================================================================== */
+    #skills {
+      background: var(--bg-base);
     }
 
-    .skill-badge.featured {
-      color: var(--accent-light);
-      border-color: var(--accent-border);
-      background: var(--accent-dim);
-      font-weight: 500;
+    .skills-matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .skill-matrix-card {
+      padding: 28px;
+    }
+
+    .skill-card-title {
+      font-size: 1.05rem;
+      color: var(--text-white);
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .skill-pills-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-pill-item {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 5px 12px;
+      transition: all 0.25s ease;
+    }
+
+    .skill-pill-item:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-dim);
+      transform: translateY(-2px);
+    }
+
+    .skill-pill-item.highlight {
+      border-color: var(--primary-border);
+      background: var(--primary-dim);
+      color: var(--primary);
+      font-weight: 600;
     }
 
     /* ==========================================================================
        EXPERIENCE & EDUCATION
        ========================================================================== */
     #experience {
-      background: var(--bg-base);
+      background: var(--bg-surface);
     }
 
-    .exp-grid {
+    .exp-edu-split {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 36px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
     }
 
-    .timeline-card {
-      padding: 28px;
+    .exp-card {
+      padding: 32px;
       height: 100%;
     }
 
-    .timeline-header {
+    .exp-header-row {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       margin-bottom: 6px;
-      gap: 12px;
       flex-wrap: wrap;
-    }
-
-    .timeline-role {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .timeline-date {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--accent-light);
-      background: var(--accent-dim);
-      border: 1px solid var(--accent-border);
-      padding: 3px 8px;
-      border-radius: 4px;
-    }
-
-    .timeline-org {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-
-    .timeline-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
       gap: 10px;
     }
 
-    .timeline-list li {
-      position: relative;
-      padding-left: 20px;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.6;
+    .exp-role-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-white);
     }
 
-    .timeline-list li::before {
+    .exp-date-badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--primary);
+      background: var(--primary-dim);
+      border: 1px solid var(--primary-border);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .exp-company-sub {
+      font-size: 0.95rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .exp-bullets li {
+      position: relative;
+      padding-left: 20px;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .exp-bullets li::before {
       content: '▹';
       position: absolute;
       left: 0;
-      color: var(--accent-light);
+      color: var(--primary);
     }
 
     /* ==========================================================================
-       CERTIFICATIONS SECTION
+       CERTIFICATIONS GRID
        ========================================================================== */
     #certifications {
-      background: var(--bg-surface);
+      background: var(--bg-base);
     }
 
-    .certs-grid {
+    .certifications-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 20px;
     }
 
-    .cert-card {
-      padding: 22px;
+    .cert-item-card {
+      padding: 24px;
       display: flex;
       align-items: flex-start;
       gap: 16px;
     }
 
-    .cert-icon {
-      font-size: 1.5rem;
+    .cert-icon-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: var(--primary-dim);
+      border: 1px solid var(--primary-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
       flex-shrink: 0;
-      line-height: 1;
-      margin-top: 2px;
     }
 
-    .cert-info h4 {
-      font-size: 0.98rem;
-      color: var(--text-main);
+    .cert-title-txt {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-white);
       margin-bottom: 4px;
       line-height: 1.35;
     }
 
-    .cert-issuer {
+    .cert-org-txt {
       font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--text-faint);
+      font-size: 0.8rem;
+      color: var(--text-muted);
       margin-bottom: 8px;
     }
 
-    .cert-badge {
+    .cert-status-pill {
       display: inline-block;
       font-family: var(--font-mono);
       font-size: 0.72rem;
-      padding: 2px 8px;
+      padding: 3px 10px;
       border-radius: 4px;
-      background: rgba(16, 185, 129, 0.1);
-      color: #34d399;
-      border: 1px solid rgba(16, 185, 129, 0.25);
-    }
-
-    .cert-badge.pursuing {
-      background: rgba(59, 130, 246, 0.1);
-      color: var(--accent-light);
-      border-color: var(--accent-border);
+      background: rgba(0, 210, 255, 0.1);
+      color: var(--primary);
+      border: 1px solid var(--primary-border);
     }
 
     /* ==========================================================================
-       CONTACT SECTION
+       CONTACT & HIRE ME
        ========================================================================== */
     #contact {
-      background: var(--bg-base);
+      background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%);
     }
 
-    .contact-grid {
+    .contact-layout-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 54px;
       align-items: start;
     }
 
-    .contact-links-list {
+    .contact-actions-card {
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      margin-top: 24px;
+      gap: 16px;
+      margin-top: 28px;
     }
 
-    .contact-link-item {
-      padding: 16px 20px;
+    .contact-action-item {
+      padding: 18px 24px;
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 18px;
       cursor: pointer;
+      text-decoration: none;
     }
 
-    .contact-link-icon {
-      font-size: 1.25rem;
-      color: var(--accent-light);
+    .contact-action-icon {
+      font-size: 1.3rem;
+      color: var(--primary);
     }
 
-    .contact-link-title {
-      font-size: 0.75rem;
+    .contact-action-lbl {
+      font-size: 0.72rem;
       font-family: var(--font-mono);
       color: var(--text-faint);
     }
 
-    .contact-link-val {
-      font-weight: 600;
-      color: var(--text-main);
-      font-size: 0.95rem;
+    .contact-action-val {
+      font-weight: 700;
+      color: var(--text-white);
+      font-size: 1rem;
     }
 
-    .contact-form {
-      padding: 32px;
+    .contact-form-bento {
+      padding: 36px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 18px;
     }
 
-    .form-group {
+    .form-field-group {
       display: flex;
       flex-direction: column;
       gap: 6px;
     }
 
-    .form-group label {
+    .form-field-group label {
       font-family: var(--font-mono);
       font-size: 0.78rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-faint);
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
     }
 
-    .form-input, .form-textarea {
+    .form-field-group input, .form-field-group textarea {
       background: var(--bg-input);
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 12px 14px;
-      color: var(--text-main);
-      font-size: 0.92rem;
+      padding: 12px 16px;
+      color: var(--text-white);
+      font-size: 0.95rem;
       outline: none;
-      transition: var(--transition);
+      transition: all 0.3s ease;
+      font-family: inherit;
     }
 
-    .form-input:focus, .form-textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 2px var(--accent-dim);
+    .form-field-group input:focus, .form-field-group textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 20px var(--primary-dim);
     }
 
-    .form-row {
+    .form-two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
+      gap: 16px;
     }
 
-    /* Toast */
+    /* Toast Notification */
     #toast {
       position: fixed;
-      bottom: 24px;
+      bottom: 30px;
       left: 50%;
-      transform: translateX(-50%) translateY(80px);
+      transform: translateX(-50%) translateY(100px);
       background: var(--bg-card);
-      border: 1px solid var(--accent);
+      border: 1px solid var(--primary);
       border-radius: var(--radius-sm);
-      padding: 10px 20px;
+      padding: 12px 26px;
       font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--text-main);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      font-size: 0.88rem;
+      color: var(--text-white);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px var(--primary-glow);
+      z-index: 99999;
       opacity: 0;
       pointer-events: none;
-      transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      z-index: 99999;
+      transition: all 0.35s var(--ease-spring);
     }
 
     #toast.show {
@@ -900,128 +1199,101 @@
 
     /* Footer */
     footer {
-      background: var(--bg-surface);
+      background: #03050a;
       border-top: 1px solid var(--border);
-      padding: 32px 0;
-      font-size: 0.85rem;
+      padding: 36px 0;
+      font-size: 0.88rem;
       color: var(--text-faint);
     }
 
-    .footer-inner {
+    .footer-flex {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 18px;
     }
 
-    .footer-links {
+    .footer-links-row {
       display: flex;
-      gap: 20px;
+      gap: 24px;
     }
 
-    .footer-links a {
+    .footer-links-row a {
       color: var(--text-muted);
+      text-decoration: none;
     }
 
-    .footer-links a:hover {
-      color: var(--accent-light);
+    .footer-links-row a:hover {
+      color: var(--primary);
     }
 
-    /* ==========================================================================
-       RESPONSIVENESS
-       ========================================================================== */
-    @media (max-width: 900px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 40px;
-      }
-      .hero-desc {
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .hero-cta {
-        justify-content: center;
-      }
-      .hero-badge {
-        margin: 0 auto 24px;
-      }
-      .stats-row {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-      }
-      .about-highlights {
-        grid-template-columns: 1fr;
-      }
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-      .exp-grid {
-        grid-template-columns: 1fr;
-      }
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 48px; }
+      .hero-summary { margin-left: auto; margin-right: auto; }
+      .hero-button-group { justify-content: center; }
+      .hero-metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .projects-bento-grid { grid-template-columns: 1fr; }
+      .skills-matrix-grid { grid-template-columns: repeat(2, 1fr); }
+      .exp-edu-split { grid-template-columns: 1fr; }
+      .contact-layout-grid { grid-template-columns: 1fr; }
+      .swarm-pipeline-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
-      .section {
-        padding: 70px 0;
-      }
+      .section { padding: 80px 0; }
       .nav-links {
         display: none;
         position: fixed;
         top: 70px;
         left: 0;
         right: 0;
-        background: rgba(9, 13, 22, 0.98);
+        background: rgba(4, 7, 14, 0.98);
         border-bottom: 1px solid var(--border);
-        padding: 20px 28px;
+        padding: 24px;
         flex-direction: column;
-        gap: 8px;
+        gap: 10px;
       }
-      .nav-links.open {
-        display: flex;
-      }
-      .hamburger {
-        display: flex;
-      }
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-      .avatar-frame {
-        width: 240px;
-        height: 240px;
-      }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      .hero-metrics-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .form-two-col { grid-template-columns: 1fr; }
+      .skills-matrix-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
+
+  <!-- Ambient Grid & Glows -->
+  <div class="bg-grid-overlay"></div>
+  <div class="bg-ambient-orb orb-1"></div>
+  <div class="bg-ambient-orb orb-2"></div>
 
   <!-- ==========================================================================
        NAVBAR
        ========================================================================== -->
   <nav id="navbar">
     <div class="container nav-inner">
-      <a href="#hero" class="nav-brand">
-        Aarthi<span>.</span>
+      <a href="#hero" class="nav-logo">
+        Aarthi<span class="nav-logo-dot"></span>
       </a>
 
       <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#arena">Live AI Arena</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#contact" style="color: var(--accent-light); font-weight: 600;">Contact</a></li>
+        <li><a href="#contact" class="nav-cta-btn">Hire Me ⚡</a></li>
       </ul>
 
       <div style="display: flex; align-items: center; gap: 12px;">
         <a href="Aarthi_S_Portfolio_Resume.pdf" download="Aarthi_S_Portfolio_Resume.pdf" class="btn btn-primary btn-sm">
           Resume PDF ↓
         </a>
-        <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation">
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation">
           <span></span>
           <span></span>
           <span></span>
@@ -1034,107 +1306,239 @@
        HERO SECTION
        ========================================================================== -->
   <section id="hero">
+    <canvas id="hero-canvas"></canvas>
+
     <div class="container">
       <div class="hero-grid">
-        <!-- Left: Intro & CTAs -->
+        <!-- Left Column: High-Impact Typography -->
         <div>
-          <div class="hero-badge">
-            <span class="hero-badge-dot"></span>
-            Open to AI &amp; ML Engineer Roles
+          <div class="hero-live-badge">
+            <span class="pulse-indicator"></span>
+            Open to AI &amp; ML Engineer Roles (2026)
           </div>
 
-          <h1 class="hero-name">Aarthi S</h1>
-          <div class="hero-role">AI &amp; ML Engineer</div>
+          <h1 class="hero-main-title">
+            Aarthi <span class="gradient-title">S</span>
+          </h1>
 
-          <p class="hero-desc">
+          <div class="hero-type-row">
+            <span>Specializing in</span>
+            <span class="typing-cursor" id="typing-text">Autonomous Multi-Agent Swarms</span>
+          </div>
+
+          <p class="hero-summary">
             <strong>B.Tech Graduate in Artificial Intelligence &amp; Data Science</strong> from Panimalar Engineering College (CGPA: 8.08 / 10).
-            Specializing in <strong>Generative AI multi-agent swarms</strong>, low-latency <strong>pgvector search pipelines (&lt;50ms)</strong>, <strong>FastAPI microservices</strong>, and <strong>95% accuracy Machine Learning models</strong>.
+            Architecting sub-50ms <strong>pgvector RAG pipelines</strong>, cooperative <strong>CrewAI multi-agent crews</strong>, <strong>FastAPI microservices</strong>, and <strong>95% accuracy ML classification systems</strong>.
           </p>
 
-          <div class="hero-cta">
+          <div class="hero-button-group">
             <a href="#projects" class="btn btn-primary">
               Explore Projects ↓
             </a>
-            <a href="Aarthi_S_Portfolio_Resume.pdf" download="Aarthi_S_Portfolio_Resume.pdf" class="btn btn-secondary">
-              📄 Download Resume
+            <a href="#arena" class="btn btn-secondary">
+              ⚡ Test Live AI Arena
             </a>
             <a href="#contact" class="btn btn-secondary">
               Get in Touch
             </a>
           </div>
-
-          <!-- Proof Metrics -->
-          <div class="stats-row">
-            <div class="stat-item">
-              <div class="stat-number">4<span>+</span></div>
-              <div class="stat-label">AI Pipelines</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">&lt;50<span>ms</span></div>
-              <div class="stat-label">Vector Latency</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">95<span>%</span></div>
-              <div class="stat-label">ML Accuracy</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">8.08<span>/10</span></div>
-              <div class="stat-label">B.Tech CGPA</div>
-            </div>
-          </div>
         </div>
 
-        <!-- Right: Exact Original Profile Image -->
-        <div class="hero-avatar-wrap">
-          <div class="avatar-frame">
-            <img src="profile.jpg" alt="Aarthi S" onerror="this.style.display='none'; document.getElementById('avatar-fallback').style.display='flex';" />
-            <div id="avatar-fallback" class="avatar-initials-fallback">AS</div>
+        <!-- Right Column: Holographic Avatar Frame -->
+        <div class="bento-card hero-visual-card">
+          <div class="avatar-cyber-halo">
+            <div class="avatar-halo-ring-1"></div>
+            <div class="avatar-halo-ring-2"></div>
+            <div class="avatar-photo-frame">
+              <img src="profile.jpg" alt="Aarthi S" onerror="this.style.display='none'; document.getElementById('hero-fallback-initials').style.display='flex';" />
+              <div id="hero-fallback-initials" class="avatar-initials-fallback">AS</div>
+            </div>
           </div>
+
+          <h3 style="font-size: 1.45rem; margin-bottom: 4px;">Aarthi S</h3>
+          <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--primary); margin-bottom: 18px;">AI &amp; ML Engineer • Chennai, India</p>
+
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+            <button onclick="copyToClipboard('aarthi784197@gmail.com', 'Email copied!')" class="btn btn-secondary btn-sm">
+              📋 Copy Email
+            </button>
+            <button onclick="copyToClipboard('+917358545506', 'Phone copied!')" class="btn btn-secondary btn-sm">
+              📞 +91 7358545506
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proof Bento Metrics -->
+      <div class="hero-metrics-grid">
+        <div class="bento-card metric-bento">
+          <div class="metric-val">4<span>+</span></div>
+          <div class="metric-title">Production AI Pipelines</div>
+        </div>
+        <div class="metric-card bento-card metric-bento">
+          <div class="metric-val">&lt;50<span>ms</span></div>
+          <div class="metric-title">pgvector Retrieval Latency</div>
+        </div>
+        <div class="metric-card bento-card metric-bento">
+          <div class="metric-val">95<span>%</span></div>
+          <div class="metric-title">ML Classifier Accuracy</div>
+        </div>
+        <div class="metric-card bento-card metric-bento">
+          <div class="metric-val">8.08<span>/10</span></div>
+          <div class="metric-title">B.Tech AI &amp; Data Science CGPA</div>
         </div>
       </div>
     </div>
   </section>
-
-  <div class="section-divider"></div>
 
   <!-- ==========================================================================
-       ABOUT SECTION
+       INTERACTIVE LIVE AI ARENA
        ========================================================================== -->
-  <section id="about" class="section">
+  <section id="arena" class="section">
     <div class="container">
       <div class="section-header">
-        <div class="section-badge">Background</div>
-        <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">Bridging cutting-edge LLM engineering with high-performance data systems.</p>
+        <div class="section-tag">Interactive Simulation</div>
+        <h2 class="section-title">Live <span class="gradient-title">AI Arena</span></h2>
+        <p class="section-desc">Experience real-time interactive simulations of my core engineering architectures.</p>
       </div>
 
-      <p class="about-text-content">
-        I am an <strong>AI &amp; ML Engineer</strong> based in Chennai, India. I build end-to-end intelligent systems spanning <strong>Generative AI applications, autonomous multi-agent crews, RAG architectures, and production REST microservices</strong>.
-      </p>
-      <p class="about-text-content">
-        Certified in <strong>AI Foundations by OpenAI</strong> and <strong>Power BI by Microsoft (PL-300)</strong>, my technical background combines practical model engineering with robust data analytics. I work with <strong>Python, FastAPI, Streamlit, PostgreSQL/pgvector, LangChain, and Groq LPUs</strong> to build low-latency AI solutions that solve real enterprise problems.
-      </p>
+      <div class="arena-nav-tabs">
+        <button class="arena-tab-btn active" onclick="switchArenaTab('vector', this)">
+          ⚡ pgvector Semantic Matcher
+        </button>
+        <button class="arena-tab-btn" onclick="switchArenaTab('swarm', this)">
+          🤖 Multi-Agent Swarm Orchestrator
+        </button>
+        <button class="arena-tab-btn" onclick="switchArenaTab('churn', this)">
+          📈 95% ML Churn Decision Engine
+        </button>
+      </div>
 
-      <div class="about-highlights">
-        <div class="card highlight-card">
-          <h4>🧠 GenAI &amp; Agent Swarms</h4>
-          <p>Orchestrating autonomous agents with LangChain, CrewAI, and Groq (Llama-3-70B) for AST code analysis and structured Pydantic validation.</p>
+      <!-- Tab 1: Vector Search -->
+      <div id="arena-vector" class="arena-panel active">
+        <div class="bento-card arena-box">
+          <h3 style="font-size: 1.35rem; margin-bottom: 8px;">TalentRadar Vector Similarity Simulator</h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 22px;">
+            Simulating cosine similarity computation over 384-dimensional dense embeddings stored in PostgreSQL <code>pgvector</code>.
+          </p>
+
+          <div class="search-action-row">
+            <input type="text" id="arena-vector-input" class="cyber-input" value="FastAPI microservice with pgvector vector search" placeholder="Type candidate requirements..." />
+            <button onclick="computeVectorSearch()" class="btn btn-primary">Search Vector DB</button>
+          </div>
+
+          <div class="vector-pill-shortcuts">
+            <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);">Quick Presets:</span>
+            <span class="shortcut-pill" onclick="setArenaQuery('Autonomous LLM Agent Swarm with CrewAI and LangChain')">Agent Swarms</span>
+            <span class="shortcut-pill" onclick="setArenaQuery('FastAPI microservice with pgvector vector search')">pgvector &amp; FastAPI</span>
+            <span class="shortcut-pill" onclick="setArenaQuery('XGBoost Machine Learning Classifier with 95% accuracy')">XGBoost ML</span>
+            <span class="shortcut-pill" onclick="setArenaQuery('Power BI PL-300 enterprise data dashboards')">Power BI &amp; SQL</span>
+          </div>
+
+          <div id="arena-vector-results" class="vector-matches-container">
+            <!-- Populated via JS -->
+          </div>
         </div>
+      </div>
 
-        <div class="card highlight-card">
-          <h4>⚡ Low-Latency Vector Search</h4>
-          <p>Architecting asynchronous ETL pipelines with AsyncIO and cosine similarity search over PostgreSQL <code>pgvector</code> in &lt;50ms.</p>
+      <!-- Tab 2: Swarm Flow -->
+      <div id="arena-swarm" class="arena-panel">
+        <div class="bento-card arena-box">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div>
+              <h3 style="font-size: 1.35rem;">Enterprise Multi-Agent Swarm Visualizer</h3>
+              <p style="font-size: 0.92rem; color: var(--text-muted);">Simulate autonomous code auditing with LangChain, CrewAI &amp; Groq Llama-3-70B.</p>
+            </div>
+            <button id="run-arena-swarm-btn" onclick="runArenaSwarm()" class="btn btn-primary">
+              🚀 Dispatch Agent Swarms
+            </button>
+          </div>
+
+          <div class="swarm-pipeline-grid">
+            <div class="swarm-node-card" id="sw-node-1">
+              <div class="swarm-node-header">
+                <span style="font-weight: 700; color: var(--text-white);">🛡️ Security Auditor</span>
+                <span class="swarm-node-badge" id="sw-badge-1">Standby</span>
+              </div>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">AST vulnerability scanning &amp; credential leak detection.</p>
+            </div>
+
+            <div class="swarm-node-card" id="sw-node-2">
+              <div class="swarm-node-header">
+                <span style="font-weight: 700; color: var(--text-white);">🧪 QA Architect</span>
+                <span class="swarm-node-badge" id="sw-badge-2">Standby</span>
+              </div>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Automated pytest matrix synthesis &amp; edge-case coverage.</p>
+            </div>
+
+            <div class="swarm-node-card" id="sw-node-3">
+              <div class="swarm-node-header">
+                <span style="font-weight: 700; color: var(--text-white);">📑 Lead Synthesizer</span>
+                <span class="swarm-node-badge" id="sw-badge-3">Standby</span>
+              </div>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Pydantic v2 structured report serialization.</p>
+            </div>
+          </div>
+
+          <div class="terminal-output-window" id="arena-swarm-terminal">
+            [Ready] Click 'Dispatch Agent Swarms' to start autonomous pipeline orchestration...
+          </div>
         </div>
+      </div>
 
-        <div class="card highlight-card">
-          <h4>📊 Data Analytics &amp; BI</h4>
-          <p>Experienced Data Analyst Intern (Schneider Electric) building executive Power BI / Tableau dashboards and optimizing multi-source SQL pipelines.</p>
+      <!-- Tab 3: Churn Predictor -->
+      <div id="arena-churn" class="arena-panel">
+        <div class="bento-card arena-box">
+          <h3 style="font-size: 1.35rem; margin-bottom: 8px;">Telecom Customer Churn Risk Estimator</h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 24px;">
+            Decision-support classifier powered by an <strong>XGBoost model trained to 95% accuracy</strong>.
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 24px;">
+            <div>
+              <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-muted); margin-bottom: 8px;">
+                <span>Tenure (Months):</span>
+                <span id="ar-tenure-val" style="color: var(--primary); font-weight: 700;">12</span>
+              </div>
+              <input type="range" min="1" max="72" value="12" id="ar-tenure-slider" style="width: 100%; accent-color: var(--primary);" oninput="calcChurnProb()" />
+            </div>
+
+            <div>
+              <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-muted); margin-bottom: 8px;">
+                <span>Monthly Bill ($):</span>
+                <span id="ar-monthly-val" style="color: var(--primary); font-weight: 700;">$75</span>
+              </div>
+              <input type="range" min="20" max="150" value="75" id="ar-monthly-slider" style="width: 100%; accent-color: var(--primary);" oninput="calcChurnProb()" />
+            </div>
+
+            <div>
+              <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-muted); margin-bottom: 8px;">Contract Type:</div>
+              <select id="ar-contract-select" class="cyber-input" style="padding: 8px 14px; font-size: 0.9rem;" onchange="calcChurnProb()">
+                <option value="monthly">Month-to-Month</option>
+                <option value="one_year">One Year</option>
+                <option value="two_year">Two Year</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="background: rgba(8, 14, 26, 0.9); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 24px; display: flex; align-items: center; justify-content: space-around; text-align: center;">
+            <div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Estimated Churn Probability</div>
+              <div id="ar-churn-score" style="font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; color: var(--primary);">42.8%</div>
+            </div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Risk Categorization</div>
+              <div id="ar-churn-tier" style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--text-white);">Moderate Risk</div>
+            </div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Prescribed Retention Action</div>
+              <div id="ar-churn-action" style="font-size: 0.95rem; color: var(--primary); font-weight: 600;">Offer 1-Year Loyalty Discount</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-
-  <div class="section-divider"></div>
 
   <!-- ==========================================================================
        FEATURED PROJECTS
@@ -1142,29 +1546,29 @@
   <section id="projects" class="section">
     <div class="container">
       <div class="section-header">
-        <div class="section-badge">Featured Work</div>
-        <h2 class="section-title">Engineering Projects</h2>
-        <p class="section-subtitle">Production-ready AI architectures with public codebases and interactive live deployments.</p>
+        <div class="section-tag">Production Codebases</div>
+        <h2 class="section-title">Featured <span class="gradient-title">Engineering Projects</span></h2>
+        <p class="section-desc">Production-grade AI systems with verified GitHub repositories and live deployments.</p>
       </div>
 
-      <div class="projects-grid">
+      <div class="projects-bento-grid">
         <!-- Project 1 -->
-        <div class="card project-card">
+        <div class="bento-card project-bento">
           <div>
-            <div class="project-header">
-              <span class="project-tag">01 / Live Platform</span>
-              <span style="font-size: 1.2rem;">🚀</span>
+            <div class="project-top-row">
+              <span class="project-index-pill">01 / Live Platform</span>
+              <span style="font-size: 1.3rem;">🚀</span>
             </div>
-            <h3 class="project-name">AI Knowledge Hub &amp; Multi-Document Intelligence</h3>
-            <ul class="project-bullets">
-              <li><strong>Ultra-Fast Streaming:</strong> Multi-turn conversational AI with real-time token streaming and dynamic LLM swapping on Groq LPUs.</li>
-              <li><strong>Multi-Document Q&amp;A:</strong> Simultaneous extraction and cross-document reasoning across PDF, CSV, TXT, and Markdown files.</li>
-              <li><strong>Live Web Grounding:</strong> Real-time internet search verification (DDGS) to ensure factual accuracy.</li>
+            <h3 class="project-heading">AI Knowledge Hub &amp; Multi-Document Intelligence</h3>
+            <ul class="project-bullet-list">
+              <li><strong>Ultra-Fast Streaming Engine:</strong> Multi-turn conversational AI with real-time token streaming and dynamic LLM swapping on Groq LPUs.</li>
+              <li><strong>Multi-Format Synthesis:</strong> Simultaneous extraction and cross-document reasoning across PDF, CSV, TXT, and Markdown files.</li>
+              <li><strong>Live Web Grounding:</strong> Real-time internet search verification (DDGS) to eliminate hallucinations with fresh facts.</li>
               <li><strong>Executive PDF Reports:</strong> 1-Click structured report generation using ReportLab.</li>
             </ul>
           </div>
           <div>
-            <div class="project-actions">
+            <div class="project-btn-row">
               <a href="https://ai-knowledge-app-bj7y4qz9qomjzu3owefkxe.streamlit.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
                 Launch Live App ↗
               </a>
@@ -1172,64 +1576,68 @@
                 GitHub Repo ↗
               </a>
             </div>
-            <div class="project-tech-list">
-              <span class="tech-pill">Streamlit</span>
-              <span class="tech-pill">Groq LPU</span>
-              <span class="tech-pill">Python</span>
-              <span class="tech-pill">PyPDF</span>
-              <span class="tech-pill">ReportLab</span>
-              <span class="tech-pill">SQLite3</span>
+            <div class="project-tech-chips">
+              <span class="tech-tag">Streamlit</span>
+              <span class="tech-tag">Groq LPU</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PyPDF</span>
+              <span class="tech-tag">ReportLab</span>
+              <span class="tech-tag">SQLite3</span>
             </div>
           </div>
         </div>
 
         <!-- Project 2 -->
-        <div class="card project-card">
+        <div class="bento-card project-bento">
           <div>
-            <div class="project-header">
-              <span class="project-tag">02 / Multi-Agent Swarm</span>
-              <span style="font-size: 1.2rem;">🤖</span>
+            <div class="project-top-row">
+              <span class="project-index-pill">02 / Multi-Agent Swarm</span>
+              <span style="font-size: 1.3rem;">🤖</span>
             </div>
-            <h3 class="project-name">Multi-Agent Enterprise Software Crew &amp; Latency Profiler</h3>
-            <ul class="project-bullets">
-              <li><strong>Autonomous Agent Swarm:</strong> Modular multi-agent system using LangChain &amp; CrewAI with Groq (Llama-3-70B) for security audits and AST vulnerability detection.</li>
-              <li><strong>Telemetry &amp; Cost Profiling:</strong> Built a benchmarking engine measuring latency (ms), token usage, and compute costs.</li>
-              <li><strong>FastAPI Microservice:</strong> Asynchronous endpoints backed by strict Pydantic v2 validation contracts.</li>
+            <h3 class="project-heading">Multi-Agent Enterprise Software Crew &amp; Latency Profiler</h3>
+            <ul class="project-bullet-list">
+              <li><strong>Autonomous Agent Swarm:</strong> Orchestrated Security Auditor, QA Architect, and Lead Reviewer using LangChain &amp; CrewAI with Groq (Llama-3-70B).</li>
+              <li><strong>AST Vulnerability Detection:</strong> Automated syntax parsing and pytest blueprint creation with zero human intervention.</li>
+              <li><strong>Telemetry &amp; Cost Profiling:</strong> Real-time latency (ms), token consumption, and compute cost benchmarking.</li>
+              <li><strong>FastAPI Microservice:</strong> Asynchronous REST endpoints backed by strict Pydantic v2 validation contracts.</li>
             </ul>
           </div>
           <div>
-            <div class="project-actions">
+            <div class="project-btn-row">
+              <button onclick="switchArenaTab('swarm', document.querySelectorAll('.arena-tab-btn')[1]); location.href='#arena';" class="btn btn-primary btn-sm">
+                ⚡ Test in Sandbox
+              </button>
               <a href="https://github.com/aarthis20040708-collab/enterprise-agent-crew" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
                 GitHub Repo ↗
               </a>
             </div>
-            <div class="project-tech-list">
-              <span class="tech-pill">Python</span>
-              <span class="tech-pill">LangChain</span>
-              <span class="tech-pill">CrewAI</span>
-              <span class="tech-pill">FastAPI</span>
-              <span class="tech-pill">Pydantic v2</span>
-              <span class="tech-pill">Groq Llama-3</span>
+            <div class="project-tech-chips">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">LangChain</span>
+              <span class="tech-tag">CrewAI</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Pydantic v2</span>
+              <span class="tech-tag">Groq Llama-3</span>
             </div>
           </div>
         </div>
 
         <!-- Project 3 -->
-        <div class="card project-card">
+        <div class="bento-card project-bento">
           <div>
-            <div class="project-header">
-              <span class="project-tag">03 / Async Data Pipeline</span>
-              <span style="font-size: 1.2rem;">⚡</span>
+            <div class="project-top-row">
+              <span class="project-index-pill">03 / Async Data Pipeline</span>
+              <span style="font-size: 1.3rem;">⚡</span>
             </div>
-            <h3 class="project-name">TalentRadar AI — Async GenAI Pipeline &amp; pgvector Search</h3>
-            <ul class="project-bullets">
-              <li><strong>High-Throughput Scraping:</strong> Asynchronous job ingestion using AsyncIO and aiohttp with semaphore concurrency throttling.</li>
-              <li><strong>384-Dim Embeddings:</strong> Structured entity extraction mapped into dense embeddings with sentence-transformers.</li>
-              <li><strong>Sub-50ms Vector Search:</strong> Cosine similarity search over PostgreSQL <code>pgvector</code>, synchronized daily via GitHub Actions.</li>
+            <h3 class="project-heading">TalentRadar AI — Async GenAI Pipeline &amp; pgvector Search</h3>
+            <ul class="project-bullet-list">
+              <li><strong>High-Throughput Scraping:</strong> Asynchronous job data harvesting using AsyncIO and aiohttp with semaphore concurrency rate-limiting.</li>
+              <li><strong>384-Dim Embeddings:</strong> Structured entity extraction mapped into dense vector embeddings with sentence-transformers.</li>
+              <li><strong>Sub-50ms Retrieval:</strong> Cosine similarity search over PostgreSQL <code>pgvector</code>, synchronized daily via GitHub Actions.</li>
             </ul>
           </div>
           <div>
-            <div class="project-actions">
+            <div class="project-btn-row">
               <a href="https://talentradar-ai.streamlit.app" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
                 Launch Live App ↗
               </a>
@@ -1237,103 +1645,106 @@
                 GitHub Repo ↗
               </a>
             </div>
-            <div class="project-tech-list">
-              <span class="tech-pill">FastAPI</span>
-              <span class="tech-pill">AsyncIO</span>
-              <span class="tech-pill">pgvector</span>
-              <span class="tech-pill">PostgreSQL</span>
-              <span class="tech-pill">Groq API</span>
-              <span class="tech-pill">GitHub Actions</span>
+            <div class="project-tech-chips">
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">AsyncIO</span>
+              <span class="tech-tag">pgvector</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Groq API</span>
+              <span class="tech-tag">GitHub Actions</span>
             </div>
           </div>
         </div>
 
         <!-- Project 4 -->
-        <div class="card project-card">
+        <div class="bento-card project-bento">
           <div>
-            <div class="project-header">
-              <span class="project-tag">04 / RAG Evaluation</span>
-              <span style="font-size: 1.2rem;">🛡️</span>
+            <div class="project-top-row">
+              <span class="project-index-pill">04 / RAG Evaluation</span>
+              <span style="font-size: 1.3rem;">🛡️</span>
             </div>
-            <h3 class="project-name">RAG Evaluation &amp; Hallucination Detector Framework</h3>
-            <ul class="project-bullets">
-              <li><strong>Automated Assessment:</strong> Measures factual consistency, faithfulness scoring, and context precision across 1,000+ RAG responses.</li>
-              <li><strong>LLM-as-a-Judge:</strong> Integrated lexical overlap and LLM-as-a-Judge metrics to catch hallucinations before reaching production.</li>
+            <h3 class="project-heading">RAG Evaluation &amp; Hallucination Detector Framework</h3>
+            <ul class="project-bullet-list">
+              <li><strong>Automated Assessment:</strong> Evaluates factual consistency, faithfulness scoring, and context precision across 1,000+ RAG responses.</li>
+              <li><strong>LLM-as-a-Judge:</strong> Integrated lexical overlap with LLM-as-a-Judge metrics to catch hallucinations before reaching users.</li>
               <li><strong>CI/CD Gatekeeper:</strong> Deployed as a FastAPI verification endpoint for continuous model monitoring.</li>
             </ul>
           </div>
           <div>
-            <div class="project-actions">
+            <div class="project-btn-row">
               <a href="#contact" class="btn btn-secondary btn-sm">
                 Discuss Architecture ↗
               </a>
             </div>
-            <div class="project-tech-list">
-              <span class="tech-pill">Python</span>
-              <span class="tech-pill">RAG</span>
-              <span class="tech-pill">Transformers</span>
-              <span class="tech-pill">FastAPI</span>
-              <span class="tech-pill">LLM Evaluation</span>
+            <div class="project-tech-chips">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">RAG</span>
+              <span class="tech-tag">Transformers</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">LLM Evaluation</span>
             </div>
           </div>
         </div>
 
         <!-- Project 5 -->
-        <div class="card project-card">
+        <div class="bento-card project-bento">
           <div>
-            <div class="project-header">
-              <span class="project-tag">05 / Cloud DataOps</span>
-              <span style="font-size: 1.2rem;">💰</span>
+            <div class="project-top-row">
+              <span class="project-index-pill">05 / Cloud DataOps</span>
+              <span style="font-size: 1.3rem;">💰</span>
             </div>
-            <h3 class="project-name">FinOps Cloud Cost Optimization Engine</h3>
-            <ul class="project-bullets">
+            <h3 class="project-heading">FinOps Cloud Cost Optimization &amp; Anomaly Engine</h3>
+            <ul class="project-bullet-list">
               <li><strong>Telemetry Pipeline:</strong> Automated ETL pipeline normalizing multi-cloud compute and database billing records.</li>
-              <li><strong>Cost Reduction Views:</strong> SQL models identifying unattached disks and idle compute nodes, delivering up to 28% monthly savings.</li>
+              <li><strong>Cost Reduction Views:</strong> SQL models identifying unattached storage disks and idle compute nodes, saving up to 28% monthly.</li>
               <li><strong>Executive Dashboard:</strong> Built interactive Streamlit reporting for spend transparency.</li>
             </ul>
           </div>
           <div>
-            <div class="project-actions">
+            <div class="project-btn-row">
               <a href="https://github.com/aarthis20040708-collab/finops-cost-optimization-engine" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
                 GitHub Repo ↗
               </a>
             </div>
-            <div class="project-tech-list">
-              <span class="tech-pill">Python</span>
-              <span class="tech-pill">SQL Models</span>
-              <span class="tech-pill">FastAPI</span>
-              <span class="tech-pill">DuckDB</span>
-              <span class="tech-pill">Pandas</span>
-              <span class="tech-pill">Streamlit</span>
+            <div class="project-tech-chips">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">SQL Models</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">DuckDB</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">Streamlit</span>
             </div>
           </div>
         </div>
 
         <!-- Project 6 -->
-        <div class="card project-card">
+        <div class="bento-card project-bento">
           <div>
-            <div class="project-header">
-              <span class="project-tag">06 / Machine Learning</span>
-              <span style="font-size: 1.2rem;">📊</span>
+            <div class="project-top-row">
+              <span class="project-index-pill">06 / Machine Learning</span>
+              <span style="font-size: 1.3rem;">📊</span>
             </div>
-            <h3 class="project-name">Telecom Customer Churn Prediction (95% Accuracy)</h3>
-            <ul class="project-bullets">
-              <li><strong>95% Accuracy Model:</strong> Trained an XGBoost classification model to accurately predict subscriber churn.</li>
-              <li><strong>Feature Engineering:</strong> End-to-end EDA, categorical encoding, and feature importance analysis.</li>
+            <h3 class="project-heading">Telecom Customer Churn Prediction (95% Accuracy)</h3>
+            <ul class="project-bullet-list">
+              <li><strong>95% Accuracy Model:</strong> Trained XGBoost and Scikit-Learn classifiers for early subscriber churn detection.</li>
+              <li><strong>Feature Engineering:</strong> End-to-end exploratory data analysis, categorical encoding, and feature importance analysis.</li>
               <li><strong>Decision-Support UI:</strong> Interactive Streamlit app simulating customer retention interventions.</li>
             </ul>
           </div>
           <div>
-            <div class="project-actions">
+            <div class="project-btn-row">
+              <button onclick="switchArenaTab('churn', document.querySelectorAll('.arena-tab-btn')[2]); location.href='#arena';" class="btn btn-primary btn-sm">
+                📈 Test Predictor
+              </button>
               <a href="https://github.com/aarthis20040708-collab/telecom-customer-churn-prediction" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
                 GitHub Repo ↗
               </a>
             </div>
-            <div class="project-tech-list">
-              <span class="tech-pill">Python</span>
-              <span class="tech-pill">XGBoost</span>
-              <span class="tech-pill">Scikit-Learn</span>
-              <span class="tech-pill">Streamlit</span>
+            <div class="project-tech-chips">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">XGBoost</span>
+              <span class="tech-tag">Scikit-Learn</span>
+              <span class="tech-tag">Streamlit</span>
             </div>
           </div>
         </div>
@@ -1341,119 +1752,130 @@
     </div>
   </section>
 
-  <div class="section-divider"></div>
-
   <!-- ==========================================================================
-       TECHNICAL SKILLS
+       TECHNICAL SKILL MATRIX
        ========================================================================== -->
   <section id="skills" class="section">
     <div class="container">
       <div class="section-header">
-        <div class="section-badge">Toolchain</div>
-        <h2 class="section-title">Technical Skills</h2>
-        <p class="section-subtitle">Core technologies and frameworks applied across my engineering projects.</p>
+        <div class="section-tag">Core Competencies</div>
+        <h2 class="section-title">Technical <span class="gradient-title">Proficiencies</span></h2>
+        <p class="section-desc">Full-stack AI toolchain from foundational algorithms to cloud deployment.</p>
       </div>
 
-      <div class="skills-grid">
-        <div class="card skill-card">
-          <h4>🧠 Generative AI &amp; LLMs</h4>
-          <div class="skill-pill-wrap">
-            <span class="skill-badge featured">LangChain</span>
-            <span class="skill-badge featured">CrewAI</span>
-            <span class="skill-badge featured">RAG Systems</span>
-            <span class="skill-badge">Groq LPUs</span>
-            <span class="skill-badge">Prompt Engineering</span>
-            <span class="skill-badge">LLM-as-a-Judge</span>
-            <span class="skill-badge">Transformers</span>
+      <div class="skills-matrix-grid">
+        <div class="bento-card skill-matrix-card">
+          <div class="skill-card-title">
+            <span>🧠</span> Generative AI
+          </div>
+          <div class="skill-pills-cloud">
+            <span class="skill-pill-item highlight">LangChain</span>
+            <span class="skill-pill-item highlight">CrewAI Swarms</span>
+            <span class="skill-pill-item highlight">RAG Systems</span>
+            <span class="skill-pill-item">Groq LPUs</span>
+            <span class="skill-pill-item">Prompt Engineering</span>
+            <span class="skill-pill-item">LLM-as-a-Judge</span>
+            <span class="skill-pill-item">Transformers</span>
           </div>
         </div>
 
-        <div class="card skill-card">
-          <h4>⚡ Backend &amp; Databases</h4>
-          <div class="skill-pill-wrap">
-            <span class="skill-badge featured">FastAPI</span>
-            <span class="skill-badge featured">pgvector</span>
-            <span class="skill-badge featured">PostgreSQL</span>
-            <span class="skill-badge">AsyncIO</span>
-            <span class="skill-badge">Pydantic v2</span>
-            <span class="skill-badge">REST APIs</span>
-            <span class="skill-badge">DuckDB</span>
-            <span class="skill-badge">SQLite3</span>
+        <div class="bento-card skill-matrix-card">
+          <div class="skill-card-title">
+            <span>⚡</span> Backend &amp; DBs
+          </div>
+          <div class="skill-pills-cloud">
+            <span class="skill-pill-item highlight">FastAPI</span>
+            <span class="skill-pill-item highlight">pgvector</span>
+            <span class="skill-pill-item highlight">PostgreSQL</span>
+            <span class="skill-pill-item">AsyncIO</span>
+            <span class="skill-pill-item">Pydantic v2</span>
+            <span class="skill-pill-item">REST APIs</span>
+            <span class="skill-pill-item">DuckDB</span>
+            <span class="skill-pill-item">SQLite3</span>
           </div>
         </div>
 
-        <div class="card skill-card">
-          <h4>📈 ML &amp; Data Analytics</h4>
-          <div class="skill-pill-wrap">
-            <span class="skill-badge featured">XGBoost (95%)</span>
-            <span class="skill-badge featured">Power BI (PL-300)</span>
-            <span class="skill-badge">Scikit-Learn</span>
-            <span class="skill-badge">Pandas</span>
-            <span class="skill-badge">Tableau</span>
-            <span class="skill-badge">SQL Transformation</span>
-            <span class="skill-badge">Streamlit</span>
+        <div class="bento-card skill-matrix-card">
+          <div class="skill-card-title">
+            <span>📈</span> ML &amp; Analytics
+          </div>
+          <div class="skill-pills-cloud">
+            <span class="skill-pill-item highlight">XGBoost (95%)</span>
+            <span class="skill-pill-item highlight">Power BI (PL-300)</span>
+            <span class="skill-pill-item">Scikit-Learn</span>
+            <span class="skill-pill-item">Pandas</span>
+            <span class="skill-pill-item">Tableau</span>
+            <span class="skill-pill-item">SQL Pipelines</span>
+            <span class="skill-pill-item">Streamlit</span>
           </div>
         </div>
 
-        <div class="card skill-card">
-          <h4>☁️ Cloud &amp; DevOps</h4>
-          <div class="skill-pill-wrap">
-            <span class="skill-badge featured">GitHub Actions CI/CD</span>
-            <span class="skill-badge">Google Cloud BigQuery</span>
-            <span class="skill-badge">Microsoft Azure</span>
-            <span class="skill-badge">Git &amp; GitHub</span>
-            <span class="skill-badge">Linux</span>
+        <div class="bento-card skill-matrix-card">
+          <div class="skill-card-title">
+            <span>☁️</span> Cloud &amp; DevOps
+          </div>
+          <div class="skill-pills-cloud">
+            <span class="skill-pill-item highlight">GitHub Actions</span>
+            <span class="skill-pill-item">Google BigQuery</span>
+            <span class="skill-pill-item">Microsoft Azure</span>
+            <span class="skill-pill-item">Git &amp; GitHub</span>
+            <span class="skill-pill-item">Linux</span>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <div class="section-divider"></div>
 
   <!-- ==========================================================================
        EXPERIENCE & EDUCATION
        ========================================================================== -->
   <section id="experience" class="section">
     <div class="container">
-      <div class="section-header">
-        <div class="section-badge">Career &amp; Education</div>
-        <h2 class="section-title">Experience &amp; Background</h2>
-      </div>
-
-      <div class="exp-grid">
-        <!-- Experience -->
-        <div class="card timeline-card">
-          <div class="timeline-header">
-            <div class="timeline-role">Data Analyst Intern</div>
-            <div class="timeline-date">Jun 2024 – Jul 2024</div>
+      <div class="exp-edu-split">
+        <!-- Work Experience -->
+        <div>
+          <div class="section-header" style="margin-bottom: 30px;">
+            <div class="section-tag">Industry Experience</div>
+            <h2 class="section-title" style="font-size: 2.2rem;">Work <span class="gradient-title">History</span></h2>
           </div>
-          <div class="timeline-org">Schneider Electric • Chennai, India</div>
-          <ul class="timeline-list">
-            <li>Built interactive Power BI and Tableau dashboards tracking operational KPIs across enterprise business units.</li>
-            <li>Cleaned and transformed multi-source datasets using SQL and Excel, improving reporting accuracy and reducing manual prep time.</li>
-            <li>Partnered with cross-functional leadership to translate raw data into actionable decision-making insights.</li>
-          </ul>
+
+          <div class="bento-card exp-card">
+            <div class="exp-header-row">
+              <div class="exp-role-title">Data Analyst Intern</div>
+              <div class="exp-date-badge">Jun 2024 – Jul 2024</div>
+            </div>
+            <div class="exp-company-sub">Schneider Electric • Chennai, India</div>
+            <ul class="exp-bullets">
+              <li>Built interactive Power BI and Tableau dashboards tracking operational KPIs across enterprise business units.</li>
+              <li>Cleaned and transformed multi-source datasets using SQL and Excel, improving reporting accuracy and reducing manual prep time.</li>
+              <li>Partnered with cross-functional leadership to translate raw telemetry into actionable decision-making insights.</li>
+            </ul>
+          </div>
         </div>
 
         <!-- Education -->
-        <div class="card timeline-card">
-          <div class="timeline-header">
-            <div class="timeline-role">B.Tech in AI &amp; Data Science</div>
-            <div class="timeline-date">2022 – 2026</div>
+        <div>
+          <div class="section-header" style="margin-bottom: 30px;">
+            <div class="section-tag">Academics</div>
+            <h2 class="section-title" style="font-size: 2.2rem;">Degree <span class="gradient-title">&amp; Track</span></h2>
           </div>
-          <div class="timeline-org">Panimalar Engineering College • Chennai, India</div>
-          <ul class="timeline-list">
-            <li><strong>CGPA: 8.08 / 10</strong></li>
-            <li>Core coursework in Machine Learning, Deep Learning, Natural Language Processing, Data Structures, and Database Systems.</li>
-            <li>Active focus on applied Generative AI architectures, vector databases, and multi-agent systems.</li>
-          </ul>
+
+          <div class="bento-card exp-card">
+            <div class="exp-header-row">
+              <div class="exp-role-title">B.Tech in AI &amp; Data Science</div>
+              <div class="exp-date-badge">2022 – 2026</div>
+            </div>
+            <div class="exp-company-sub">Panimalar Engineering College • Chennai, India</div>
+            <ul class="exp-bullets">
+              <li><strong>CGPA: 8.08 / 10</strong></li>
+              <li>Specialized coursework in Machine Learning, Natural Language Processing, Deep Learning, and Distributed Database Systems.</li>
+              <li>Hands-on research in applied Generative AI and vector database architectures.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
-
-  <div class="section-divider"></div>
 
   <!-- ==========================================================================
        CERTIFICATIONS
@@ -1461,147 +1883,144 @@
   <section id="certifications" class="section">
     <div class="container">
       <div class="section-header">
-        <div class="section-badge">Accreditations</div>
-        <h2 class="section-title">Certifications</h2>
+        <div class="section-tag">Verified Credentials</div>
+        <h2 class="section-title">Industry <span class="gradient-title">Certifications</span></h2>
       </div>
 
-      <div class="certs-grid">
-        <div class="card cert-card">
-          <div class="cert-icon">🧠</div>
-          <div class="cert-info">
-            <h4>AI Foundations</h4>
-            <div class="cert-issuer">OpenAI</div>
-            <span class="cert-badge">✓ Completed</span>
+      <div class="certifications-grid">
+        <div class="bento-card cert-item-card">
+          <div class="cert-icon-circle">🧠</div>
+          <div>
+            <div class="cert-title-txt">AI Foundations</div>
+            <div class="cert-org-txt">OpenAI</div>
+            <span class="cert-status-pill">✓ Completed</span>
           </div>
         </div>
 
-        <div class="card cert-card">
-          <div class="cert-icon">📊</div>
-          <div class="cert-info">
-            <h4>Power BI Data Analyst Associate (PL-300)</h4>
-            <div class="cert-issuer">Microsoft</div>
-            <span class="cert-badge">✓ Completed</span>
+        <div class="bento-card cert-item-card">
+          <div class="cert-icon-circle">📊</div>
+          <div>
+            <div class="cert-title-txt">Power BI Data Analyst (PL-300)</div>
+            <div class="cert-org-txt">Microsoft</div>
+            <span class="cert-status-pill">✓ Completed</span>
           </div>
         </div>
 
-        <div class="card cert-card">
-          <div class="cert-icon">🚀</div>
-          <div class="cert-info">
-            <h4>Generative AI Mastermind</h4>
-            <div class="cert-issuer">Outskill</div>
-            <span class="cert-badge">✓ Completed</span>
+        <div class="bento-card cert-item-card">
+          <div class="cert-icon-circle">🚀</div>
+          <div>
+            <div class="cert-title-txt">Generative AI Mastermind</div>
+            <div class="cert-org-txt">Outskill</div>
+            <span class="cert-status-pill">✓ Completed</span>
           </div>
         </div>
 
-        <div class="card cert-card">
-          <div class="cert-icon">🎓</div>
-          <div class="cert-info">
-            <h4>Generative AI for Developers</h4>
-            <div class="cert-issuer">IIT Patna</div>
-            <span class="cert-badge pursuing">⏳ Pursuing</span>
+        <div class="bento-card cert-item-card">
+          <div class="cert-icon-circle">🎓</div>
+          <div>
+            <div class="cert-title-txt">Generative AI for Developers</div>
+            <div class="cert-org-txt">IIT Patna</div>
+            <span class="cert-status-pill" style="color: #60a5fa;">⏳ Pursuing</span>
           </div>
         </div>
 
-        <div class="card cert-card">
-          <div class="cert-icon">☁️</div>
-          <div class="cert-info">
-            <h4>Google Cloud Data Analytics</h4>
-            <div class="cert-issuer">Google Cloud</div>
-            <span class="cert-badge">✓ Completed</span>
+        <div class="bento-card cert-item-card">
+          <div class="cert-icon-circle">☁️</div>
+          <div>
+            <div class="cert-title-txt">Google Cloud Data Analytics</div>
+            <div class="cert-org-txt">Google Cloud</div>
+            <span class="cert-status-pill">✓ Completed</span>
           </div>
         </div>
 
-        <div class="card cert-card">
-          <div class="cert-icon">💼</div>
-          <div class="cert-info">
-            <h4>Data Analytics Job Simulation</h4>
-            <div class="cert-issuer">Deloitte × Forage</div>
-            <span class="cert-badge">✓ Completed</span>
+        <div class="bento-card cert-item-card">
+          <div class="cert-icon-circle">💼</div>
+          <div>
+            <div class="cert-title-txt">Data Analytics Simulation</div>
+            <div class="cert-org-txt">Deloitte × Forage</div>
+            <span class="cert-status-pill">✓ Completed</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="section-divider"></div>
-
   <!-- ==========================================================================
-       CONTACT SECTION
+       CONTACT & HIRE ME
        ========================================================================== -->
   <section id="contact" class="section">
     <div class="container">
-      <div class="contact-grid">
-        <!-- Contact Information -->
+      <div class="contact-layout-grid">
         <div>
-          <div class="section-badge">Get in Touch</div>
-          <h2 class="section-title">Let's Connect</h2>
-          <p class="section-subtitle">
-            Open to full-time AI &amp; ML Engineer roles, internships, and high-impact machine learning projects.
+          <div class="section-tag">Direct Inquiry</div>
+          <h2 class="section-title">Let's Build <span class="gradient-title">Something Great</span></h2>
+          <p class="section-desc">
+            Open to full-time AI/ML roles, internships, and high-impact machine learning projects. Reach out directly or fill out the form.
           </p>
 
-          <div class="contact-links-list">
-            <div class="card contact-link-item" onclick="copyText('aarthi784197@gmail.com', 'Email copied!')">
-              <div class="contact-link-icon">📧</div>
+          <div class="contact-actions-card">
+            <div class="bento-card contact-action-item" onclick="copyToClipboard('aarthi784197@gmail.com', 'Email copied!')">
+              <div class="contact-action-icon">📧</div>
               <div>
-                <div class="contact-link-title">EMAIL ADDRESS</div>
-                <div class="contact-link-val">aarthi784197@gmail.com</div>
+                <div class="contact-action-lbl">DIRECT EMAIL</div>
+                <div class="contact-action-val">aarthi784197@gmail.com</div>
               </div>
             </div>
 
-            <div class="card contact-link-item" onclick="copyText('+917358545506', 'Phone copied!')">
-              <div class="contact-link-icon">📞</div>
+            <div class="bento-card contact-action-item" onclick="copyToClipboard('+917358545506', 'Phone copied!')">
+              <div class="contact-action-icon">📞</div>
               <div>
-                <div class="contact-link-title">PHONE / WHATSAPP</div>
-                <div class="contact-link-val">+91 7358545506</div>
+                <div class="contact-action-lbl">PHONE / WHATSAPP</div>
+                <div class="contact-action-val">+91 7358545506</div>
               </div>
             </div>
 
-            <a href="https://www.linkedin.com/in/s-aarthi-" target="_blank" rel="noopener" class="card contact-link-item">
-              <div class="contact-link-icon">💼</div>
+            <a href="https://www.linkedin.com/in/s-aarthi-" target="_blank" rel="noopener" class="bento-card contact-action-item">
+              <div class="contact-action-icon">💼</div>
               <div>
-                <div class="contact-link-title">LINKEDIN</div>
-                <div class="contact-link-val">linkedin.com/in/s-aarthi- ↗</div>
+                <div class="contact-action-lbl">LINKEDIN</div>
+                <div class="contact-action-val">linkedin.com/in/s-aarthi- ↗</div>
               </div>
             </a>
 
-            <a href="https://github.com/aarthis20040708-collab" target="_blank" rel="noopener" class="card contact-link-item">
-              <div class="contact-link-icon">📂</div>
+            <a href="https://github.com/aarthis20040708-collab" target="_blank" rel="noopener" class="bento-card contact-action-item">
+              <div class="contact-action-icon">📂</div>
               <div>
-                <div class="contact-link-title">GITHUB</div>
-                <div class="contact-link-val">github.com/aarthis20040708-collab ↗</div>
+                <div class="contact-action-lbl">GITHUB</div>
+                <div class="contact-action-val">github.com/aarthis20040708-collab ↗</div>
               </div>
             </a>
           </div>
         </div>
 
-        <!-- Contact Form (Direct AJAX Delivery) -->
-        <form class="card contact-form" id="contact-form" onsubmit="handleFormSubmit(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="cf-name">Name</label>
-              <input type="text" id="cf-name" name="name" class="form-input" placeholder="Your Name" required />
+        <!-- Direct AJAX Contact Form -->
+        <form class="bento-card contact-form-bento" id="ajax-contact-form" onsubmit="submitContactForm(event)">
+          <div class="form-two-col">
+            <div class="form-field-group">
+              <label for="form-name">Name</label>
+              <input type="text" id="form-name" name="name" placeholder="Your Name" required />
             </div>
-            <div class="form-group">
-              <label for="cf-email">Email</label>
-              <input type="email" id="cf-email" name="email" class="form-input" placeholder="your@email.com" required />
+            <div class="form-field-group">
+              <label for="form-email">Email</label>
+              <input type="email" id="form-email" name="email" placeholder="your@company.com" required />
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="cf-subject">Subject</label>
-            <input type="text" id="cf-subject" name="_subject" class="form-input" placeholder="Role / Collaboration" />
+          <div class="form-field-group">
+            <label for="form-subject">Subject</label>
+            <input type="text" id="form-subject" name="_subject" placeholder="AI/ML Role / Project Discussion" />
           </div>
 
-          <div class="form-group">
-            <label for="cf-message">Message</label>
-            <textarea id="cf-message" name="message" class="form-textarea" rows="4" placeholder="Hello Aarthi, I'd like to discuss..." required></textarea>
+          <div class="form-field-group">
+            <label for="form-msg">Message</label>
+            <textarea id="form-msg" name="message" rows="4" placeholder="Hi Aarthi, I reviewed your portfolio and would like to discuss..." required></textarea>
           </div>
 
-          <button type="submit" id="cf-btn" class="btn btn-primary" style="width: 100%;">
-            Send Message
+          <button type="submit" id="form-submit-btn" class="btn btn-primary" style="width: 100%; justify-content: center;">
+            <span id="form-submit-txt">Send Direct Message</span> <span>⚡</span>
           </button>
 
-          <div id="cf-status" style="display: none; text-align: center; font-family: var(--font-mono); font-size: 0.82rem; color: #10b981; margin-top: 4px;">
+          <div id="form-feedback" style="display: none; text-align: center; font-family: var(--font-mono); font-size: 0.85rem; color: var(--primary); margin-top: 6px;">
             ✓ Message delivered directly to Aarthi's inbox!
           </div>
         </form>
@@ -1616,9 +2035,9 @@
        FOOTER
        ========================================================================== -->
   <footer>
-    <div class="container footer-inner">
+    <div class="container footer-flex">
       <div>© 2026 Aarthi S — AI &amp; ML Engineer</div>
-      <div class="footer-links">
+      <div class="footer-links-row">
         <a href="mailto:aarthi784197@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/s-aarthi-" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/aarthis20040708-collab" target="_blank" rel="noopener">GitHub</a>
@@ -1627,62 +2046,319 @@
   </footer>
 
   <!-- ==========================================================================
-       JAVASCRIPT
+       JAVASCRIPT INTERACTIONS
        ========================================================================== -->
   <script>
-    // Hamburger Menu
-    const hamburgerBtn = document.getElementById("hamburger-btn");
-    const navLinks = document.getElementById("nav-links");
-    hamburgerBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
-    });
+    /* 1. Typewriter Animation */
+    const typeList = [
+      "Autonomous Multi-Agent Swarms",
+      "Sub-50ms pgvector RAG Pipelines",
+      "95% Accuracy ML Classifiers",
+      "FastAPI Asynchronous Microservices"
+    ];
+    let tIdx = 0, cIdx = 0, deleting = false;
+    const typeEl = document.getElementById("typing-text");
 
-    // Close menu when link is clicked
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
+    function runTypewriter() {
+      const current = typeList[tIdx];
+      if (deleting) {
+        cIdx--;
+        typeEl.textContent = current.substring(0, cIdx);
+      } else {
+        cIdx++;
+        typeEl.textContent = current.substring(0, cIdx);
+      }
+
+      let speed = deleting ? 35 : 75;
+      if (!deleting && cIdx === current.length) {
+        speed = 2000;
+        deleting = true;
+      } else if (deleting && cIdx === 0) {
+        deleting = false;
+        tIdx = (tIdx + 1) % typeList.length;
+        speed = 400;
+      }
+      setTimeout(runTypewriter, speed);
+    }
+    document.addEventListener("DOMContentLoaded", runTypewriter);
+
+    /* 2. Neural Mesh Canvas */
+    (function initCanvas() {
+      const canvas = document.getElementById("hero-canvas");
+      const ctx = canvas.getContext("2d");
+      let W, H, nodes = [];
+      const COUNT = 55;
+      const MAX_DIST = 160;
+
+      function resize() {
+        W = canvas.width = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+      }
+
+      function createNodes() {
+        nodes = [];
+        for (let i = 0; i < COUNT; i++) {
+          nodes.push({
+            x: Math.random() * W,
+            y: Math.random() * H,
+            vx: (Math.random() - 0.5) * 0.45,
+            vy: (Math.random() - 0.5) * 0.45,
+            r: Math.random() * 2 + 1.2
+          });
+        }
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        for (let i = 0; i < nodes.length; i++) {
+          for (let j = i + 1; j < nodes.length; j++) {
+            const dx = nodes[i].x - nodes[j].x;
+            const dy = nodes[i].y - nodes[j].y;
+            const d = Math.sqrt(dx * dx + dy * dy);
+            if (d < MAX_DIST) {
+              ctx.beginPath();
+              ctx.moveTo(nodes[i].x, nodes[i].y);
+              ctx.lineTo(nodes[j].x, nodes[j].y);
+              ctx.strokeStyle = `rgba(0, 210, 255, ${(1 - d / MAX_DIST) * 0.28})`;
+              ctx.lineWidth = 0.8;
+              ctx.stroke();
+            }
+          }
+        }
+
+        nodes.forEach(n => {
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(0, 210, 255, 0.75)';
+          ctx.fill();
+        });
+      }
+
+      function update() {
+        nodes.forEach(n => {
+          n.x += n.vx;
+          n.y += n.vy;
+          if (n.x < 0 || n.x > W) n.vx *= -1;
+          if (n.y < 0 || n.y > H) n.vy *= -1;
+        });
+      }
+
+      function loop() {
+        update();
+        draw();
+        requestAnimationFrame(loop);
+      }
+
+      window.addEventListener("resize", () => { resize(); createNodes(); });
+      resize();
+      createNodes();
+      loop();
+    })();
+
+    /* 3. Mouse Spotlight on Bento Cards */
+    document.addEventListener("mousemove", (e) => {
+      document.querySelectorAll(".bento-card").forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
       });
     });
 
-    // Toast Notification
-    function showToast(msg) {
-      const toast = document.getElementById("toast");
-      toast.textContent = msg;
-      toast.classList.add("show");
-      setTimeout(() => toast.classList.remove("show"), 2500);
+    /* 4. Navbar Scroll & Mobile Menu */
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 40) navbar.classList.add("scrolled");
+      else navbar.classList.remove("scrolled");
+    });
+
+    const hamburger = document.getElementById("hamburger-btn");
+    const navLinks = document.getElementById("nav-links");
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    /* 5. Live AI Arena Logic */
+    function switchArenaTab(key, btn) {
+      document.querySelectorAll(".arena-tab-btn").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".arena-panel").forEach(p => p.classList.remove("active"));
+      btn.classList.add("active");
+      document.getElementById(`arena-${key}`).classList.add("active");
     }
 
-    function copyText(text, msg) {
+    const vectorData = [
+      { name: "TalentRadar Job Pipeline", match: 98.4, tech: "FastAPI • AsyncIO • pgvector • Groq LPU", desc: "Harvests tech roles, parses dense vectors, & executes cosine search in <50ms." },
+      { name: "Multi-Agent Enterprise Crew", match: 92.6, tech: "LangChain • CrewAI • Llama-3-70B • Pydantic", desc: "Autonomous AST vulnerability detection and test blueprint synthesis." },
+      { name: "AI Knowledge Hub Platform", match: 89.2, tech: "Groq LPU • Streamlit • PyPDF • SQLite3", desc: "Multi-document Q&A with live web grounding and instant PDF reports." },
+      { name: "Telecom Churn ML Engine", match: 84.5, tech: "XGBoost (95%) • Scikit-Learn • Streamlit", desc: "Subscriber churn predictive decision engine." }
+    ];
+
+    function computeVectorSearch() {
+      const q = document.getElementById("arena-vector-input").value.toLowerCase();
+      const container = document.getElementById("arena-vector-results");
+      container.innerHTML = `<div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--primary);">Calculating cosine embeddings in PostgreSQL pgvector...</div>`;
+
+      setTimeout(() => {
+        container.innerHTML = "";
+        vectorData.forEach(item => {
+          let score = item.match;
+          if (q.includes("agent") && item.name.includes("Agent")) score = 99.4;
+          if (q.includes("fastapi") && item.tech.includes("FastAPI")) score = 98.9;
+          if (q.includes("churn") && item.name.includes("Churn")) score = 97.8;
+
+          const row = document.createElement("div");
+          row.className = "vector-match-item";
+          row.innerHTML = `
+            <div>
+              <div style="font-weight: 700; color: var(--text-white); font-size: 1rem;">${item.name}</div>
+              <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--primary); margin: 3px 0;">${item.tech}</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">${item.desc}</div>
+            </div>
+            <div style="text-align: right; flex-shrink: 0;">
+              <div style="font-family: var(--font-mono); font-weight: 700; color: var(--primary); font-size: 0.95rem;">${score.toFixed(1)}% Match</div>
+              <div class="progress-bar-rail">
+                <div class="progress-bar-fill" style="width: ${score}%"></div>
+              </div>
+            </div>
+          `;
+          container.appendChild(row);
+        });
+      }, 200);
+    }
+
+    function setArenaQuery(txt) {
+      document.getElementById("arena-vector-input").value = txt;
+      computeVectorSearch();
+    }
+    document.addEventListener("DOMContentLoaded", computeVectorSearch);
+
+    /* Arena 2: Swarm */
+    let swarmActive = false;
+    function runArenaSwarm() {
+      if (swarmActive) return;
+      swarmActive = true;
+      const term = document.getElementById("arena-swarm-terminal");
+      const btn = document.getElementById("run-arena-swarm-btn");
+      btn.disabled = true;
+      btn.textContent = "Swarm Running...";
+
+      const n1 = document.getElementById("sw-node-1");
+      const n2 = document.getElementById("sw-node-2");
+      const n3 = document.getElementById("sw-node-3");
+      const b1 = document.getElementById("sw-badge-1");
+      const b2 = document.getElementById("sw-badge-2");
+      const b3 = document.getElementById("sw-badge-3");
+
+      term.innerHTML = `[00:00.00] 🟢 Initializing LangChain Swarm Manager with Groq Llama-3-70B...\n`;
+
+      setTimeout(() => {
+        n1.classList.add("active");
+        b1.className = "swarm-node-badge running";
+        b1.textContent = "Auditing AST...";
+        term.innerHTML += `[00:00.45] 🛡️ [Security Auditor] Parsing AST tree... 1,420 lines checked for SQLi & hardcoded tokens.\n`;
+        term.scrollTop = term.scrollHeight;
+      }, 500);
+
+      setTimeout(() => {
+        n1.classList.remove("active");
+        b1.textContent = "Audit Done ✓";
+        n2.classList.add("active");
+        b2.className = "swarm-node-badge running";
+        b2.textContent = "Synthesizing Tests...";
+        term.innerHTML += `[00:01.10] 🧪 [QA Architect] Generating pytest matrix for edge-cases & AsyncIO concurrency throttle.\n`;
+        term.scrollTop = term.scrollHeight;
+      }, 1600);
+
+      setTimeout(() => {
+        n2.classList.remove("active");
+        b2.textContent = "Tests Done ✓";
+        n3.classList.add("active");
+        b3.className = "swarm-node-badge running";
+        b3.textContent = "Validating...";
+        term.innerHTML += `[00:01.85] 📑 [Lead Synthesizer] Serializing findings into verified Pydantic v2 JSON schema.\n`;
+        term.scrollTop = term.scrollHeight;
+      }, 2600);
+
+      setTimeout(() => {
+        n3.classList.remove("active");
+        b3.textContent = "Complete ✓";
+        term.innerHTML += `[00:02.40] ✅ Swarm workflow finished in 420ms! 0 Security flaws found. 12 Pytests verified.\n`;
+        term.scrollTop = term.scrollHeight;
+        btn.disabled = false;
+        btn.textContent = "🚀 Dispatch Agent Swarms Again";
+        swarmActive = false;
+      }, 3500);
+    }
+
+    /* Arena 3: Churn */
+    function calcChurnProb() {
+      const tenure = parseInt(document.getElementById("ar-tenure-slider").value);
+      const monthly = parseInt(document.getElementById("ar-monthly-slider").value);
+      const contract = document.getElementById("ar-contract-select").value;
+
+      document.getElementById("ar-tenure-val").textContent = tenure;
+      document.getElementById("ar-monthly-val").textContent = `$${monthly}`;
+
+      let base = 65;
+      base -= tenure * 0.75;
+      base += (monthly - 50) * 0.35;
+      if (contract === "one_year") base -= 18;
+      if (contract === "two_year") base -= 32;
+      base = Math.max(4.2, Math.min(94.8, base));
+
+      document.getElementById("ar-churn-score").textContent = `${base.toFixed(1)}%`;
+      const tier = document.getElementById("ar-churn-tier");
+      const act = document.getElementById("ar-churn-action");
+
+      if (base < 30) {
+        tier.textContent = "Low Churn Risk";
+        act.textContent = "Standard Retention Strategy";
+      } else if (base < 60) {
+        tier.textContent = "Moderate Risk";
+        act.textContent = "Offer 1-Year Loyalty Discount";
+      } else {
+        tier.textContent = "Critical Churn Risk";
+        act.textContent = "Priority VIP Outreach Call";
+      }
+    }
+
+    /* 6. Toast & Contact AJAX */
+    function showToast(msg) {
+      const t = document.getElementById("toast");
+      t.textContent = msg;
+      t.classList.add("show");
+      setTimeout(() => t.classList.remove("show"), 2600);
+    }
+
+    function copyToClipboard(text, msg) {
       navigator.clipboard.writeText(text).then(() => {
         showToast(msg || "Copied to clipboard!");
       });
     }
 
-    // Direct Form AJAX Handling
-    function handleFormSubmit(e) {
+    function submitContactForm(e) {
       e.preventDefault();
-      const form = document.getElementById("contact-form");
-      const btn = document.getElementById("cf-btn");
-      const status = document.getElementById("cf-status");
+      const form = document.getElementById("ajax-contact-form");
+      const txt = document.getElementById("form-submit-txt");
+      const feed = document.getElementById("form-feedback");
 
-      btn.disabled = true;
-      btn.textContent = "Sending...";
+      txt.textContent = "Delivering to Aarthi...";
 
-      const formData = new FormData(form);
+      const data = new FormData(form);
       fetch("https://formsubmit.co/ajax/aarthi784197@gmail.com", {
         method: "POST",
         headers: { "Accept": "application/json" },
-        body: formData
+        body: data
       })
       .then(res => res.json())
       .then(() => {
-        btn.textContent = "Message Sent ✓";
-        status.style.display = "block";
+        txt.textContent = "Message Delivered ✓";
+        feed.style.display = "block";
         form.reset();
         setTimeout(() => {
-          btn.disabled = false;
-          btn.textContent = "Send Message";
-          status.style.display = "none";
+          txt.textContent = "Send Direct Message";
+          feed.style.display = "none";
         }, 5000);
       })
       .catch(() => {
